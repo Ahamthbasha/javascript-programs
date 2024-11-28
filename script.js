@@ -118,3 +118,104 @@ const num=5
 console.log(num+5)
 
 */
+
+
+//4.How our code executed
+// console.log(firstName)
+
+// var firstName="ahamathbasha"
+// let lastName=".F"
+// let age=21
+// const yearOfBirth=2003
+
+// console.log(firstName)
+
+//5.Dialog boxes
+/*
+alert("your message is here")
+console.log(alert("your message is here"))
+const alertResult=alert("no more data")
+console.log(alertResult)
+confirm("would you like to proceed")
+console.log(confirm("would you like to proceed"))
+console.log(confirm("would you like to proceed"))
+const ans=confirm(5>3)
+console.log(ans)
+const correctAns=confirm("5 >3")
+// console.log(correctAns)
+let name=prompt("please enter your name")
+console.log(name)
+let novalue=prompt("please enter your thing")
+console.log(novalue)
+alert("your name is "+name)
+*/
+
+//6.script methods and properties
+/*
+const message='hello'
+console.log(message[0])
+console.log(message[11])
+console.log(message.length)
+//It wont change the original string or variable
+console.log(message.toUpperCase())
+console.log(message)
+console.log(message.toLowerCase())
+console.log(message)
+
+//trim also wont change the original string
+let cut="   hi   "
+console.log(cut.trim())
+console.log(cut)
+console.log(cut.trimStart())
+console.log(cut.trimEnd())
+console.log(cut)
+
+//chaining
+let methodChaining="  hi  all  ".trim().toLowerCase().toUpperCase()
+console.log(methodChaining)
+
+//Includes true or false it is case sensitive
+let check="Hi i am ahamathbasha"
+console.log(check.includes("i"))
+console.log(check.includes("I"))
+//indexOf return index value of the character
+let name="shahrukhan"
+console.log(name.indexOf("h"))
+console.log(name.indexOf("g"))//if the character or word not there gives -1
+
+//replace and replace all it also does not chang the string
+let message="hi , i am basha"
+console.log(message.replace("hi","hello"))
+console.log(message)
+console.log(message.replace("bye","hello"))//if it is not matched there will be no change
+console.log(message.replace("a","A"))
+console.log(message)
+console.log(message.replaceAll("a","A"))
+console.log(message)
+
+//concat
+
+let name="ahamathbasha"+" F"
+console.log(name)
+let movie="dark knight rises"
+let director=" directed by christopher nolan"
+console.log(movie.concat(director))
+
+//padStart and padEnd also does not change the original string
+
+let lastFourDigit="8654"
+console.log(lastFourDigit.padStart(16,"@"))
+console.log(lastFourDigit)
+console.log(lastFourDigit.padEnd(16,"@"))
+console.log(lastFourDigit)
+
+//charAt return the character of the specified index
+let moviename="vasool raja"
+console.log(moviename[3])
+console.log(moviename.charAt(3))
+
+//charCodeAt() gives the ascii value of the character
+let name="munna bhai"
+console.log(name.charCodeAt(0))
+
+*/
