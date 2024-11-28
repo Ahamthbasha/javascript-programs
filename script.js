@@ -215,8 +215,105 @@ let moviename="vasool raja"
 console.log(moviename[3])
 console.log(moviename.charAt(3))
 
-//charCodeAt() gives the ascii value of the character
+//charCodeAt() gives the unicode value of the index of the character not ascii value
 let name="munna bhai"
 console.log(name.charCodeAt(0))
 
+
+//split it does not also change the original string
+let name="My name is Anurag"
+console.log(name.split())
+console.log(name.split(''))
+console.log(name.split(' '))
+console.log(name.split("a"))
+console.log(name)
+
+const name="ahamathbasha"
+const templateString=`Hi my name is ${name}`
+console.log(templateString)
+
+
+const greet=" Horray! "
+console.log(greet.indexOf("r"))
+console.log(greet.trim())
+
+const name="kgf rockybhai"
+console.log(name.replace("kgf","bagheera"))
+console.log(name)
+
+const name2="vicky hi vicky"
+console.log(name2.replaceAll("vicky","bye"))
+console.log(name2)
+
+
+
+//7.MathObject
+
+console.log(13/2);
+console.log(13%2)
+console.log(5 ** 2)// exponential 5*5=25
+//Math is a builtin Object
+console.log(Math.PI)
+console.log(Math.sqrt(16))
+console.log(Math.pow(2,5))
+console.log(2 ** 5)
+// () is method without () is property
+//downward
+console.log(Math.floor(2.4))
+console.log(Math.floor(2.9))
+console.log(Math.floor(2.5))
+console.log(Math.floor(-2.5))
+
+//upwards
+console.log(Math.ceil(2.1))
+console.log(Math.ceil(-2.1))
+
+//round(0.1 to 0.4 downwards otherwise upwards)
+console.log(Math.round(2.1))
+console.log(Math.round(2.4))
+console.log(Math.round(2.5))
+console.log(Math.round(2.6))
+console.log(Math.round(-2.1))
+console.log(Math.round(-2.5))
+
+//Math.random gives value 0 to 1.If we multiply with any given no it won't come from that limit. 
+for(let i=1;i<=5;i++){
+console.log(Math.random())
+}
+
+for(let i=1;i<=5;i++){
+console.log(Math.random()*20)
+}
+
+//To get the number in integer we use Math.floor
+
+for(let i=1;i<=5;i++){
+console.log(Math.floor(Math.randrom()*20))
+}
+
+//infinity , -infinity ,nan
+console.log(8/0)
+console.log(typeof(8/0))
+console.log(-8/0)
+console.log(typeof(-8/0))
+console.log(0/0)
+console.log(typeof(0/0))
+
+
+//when we get value using prompt it will store as a string datatype
+let height=prompt("enter height")
+let width=prompt("enter width")
+console.log(height)
+console.log(typeof height)
+console.log(width)
+console.log(typeof width)
+//type conversion
+console.log(`area of a rectangle is ${height*width}`)
+//It print the output in the document
+document.write(`area of the rectangle ${height * width}`)
+
+//tricky
+let result="hello"-5
+console.log(result)
 */
+
