@@ -151,6 +151,7 @@ alert("your name is "+name)
 */
 
 //6.script methods and properties
+
 /*
 const message='hello'
 console.log(message[0])
