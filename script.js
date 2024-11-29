@@ -315,5 +315,166 @@ document.write(`area of the rectangle ${height * width}`)
 //tricky
 let result="hello"-5
 console.log(result)
-*/
 
+//8.Truthy falsy values
+
+//truthy values
+console.log(Boolean(10))
+console.log(Boolean(-10))
+console.log(Boolean(' '))
+console.log(Boolean(Infinity))
+console.log(Boolean(-Infinity))
+console.log(Boolean(0.1))
+
+//falsy values
+console.log(Boolean(''))//empty string
+console.log(Boolean(0))
+console.log(Boolean(-0))
+console.log(Boolean(NaN))
+console.log(Boolean(undefined))
+console.log(Boolean(null))
+//Boolean we can also use!!
+console.log(!!0)
+
+//9.comparison operator
+
+//equality
+console.log(7==7)
+
+const userAge1=18
+const userAge2=24
+console.log(userAge1==userAge2)
+
+//Implicit conversion or automatic conversion
+const age1='18'
+const age2=24
+console.log(age1==age2)//it converts the age1 string into number
+
+//strict equality
+
+const n1='18'
+const n2=18
+console.log(n1===n2)//it checks type of the value of the variable if both are not  matched it does not evaluate.
+
+//Here we need to perform explicit conversion
+
+const num1='20'
+const num2=20
+console.log(+num1 === num2)//explicit conversion does not change the original datatype of the variable.For evaluation purpose only it supports this.
+console.log(parseInt(num1)===num2)//explicit conversion
+console.log(typeof num1)
+
+const coderAge1=21
+const coderAge2=25
+
+console.log(coderAge1!=coderAge2)
+
+const price1=100
+const price2=100
+console.log(price1!=price2)
+
+const str='20'
+const number=20
+console.log(str!=number)
+
+//explicit conversion strict not equal to
+
+const java="100"
+const js=100
+console.log(java!==js)//string !== no true
+console.log(+java!==js)//no!=no 100!=100 false
+
+//here after everything supports implicit type conversion
+const mark1=100
+const mark2=200
+console.log(mark1>mark2)
+console.log(mark2>mark1)
+console.log(mark2<mark1)
+console.log(mark2>=mark1)
+console.log(mark2<=mark1)
+
+
+//tricky
+console.log(5>6>7)//5>6 false.false numeric value is (0)false>7 false.Answer will be false
+
+
+//10.logical operator(checking two or more conditions)
+//&& true && true =true otherwise false
+console.log((5<7)&&(8>4))
+
+const userAge=21
+console.log(userAge>=18 && userAge<=24)
+const isSchoolStudent=userAge>=18 && userAge<=24
+console.log(isSchoolStudent)
+const isCollegeStudent=userAge>=18 && userAge<=24
+console.log(isCollegeStudent);
+
+//|| both side is false=false otherwise true
+const student=isSchoolStudent||isCollegeStudent
+console.log(student)
+
+console.log(true || false)
+console.log(true && false)
+
+//It gives truthy or falsy values
+console.log(1 && 2)//starting 1 is truthy so it gives truthy values.It means it checks the another value.
+console.log(0 && 1) //starting 0 is falsy so it gives falsy value and does not go to other condition or no
+console.log(1||2)//starting truthy so it gives the starting value does not move to other no.Give 1 as a result
+console.log(0||2)////starting value is falsy goes to other no or condition to check or find the truthy values.Give 2 as a result
+
+console.log(''&&'hello')//no gap empty string which is falsy value so give ('')
+console.log(" "&& "hello")//there is a gap in the empty string which is truthy so got to next value give output as 'hello'
+console.log(""||"hello")//hello
+console.log(" "||"hello")//" "
+console.log('Hello'&&null)//first truthy value come it move forward
+console.log('hello'||null)//or got truthyvalue first it does not go move forward
+console.log('hello' && 4+8)
+console.log('hello' || 4+8)
+console.log('hello' && -4+4)
+console.log(undefined || 4+4)
+
+const logResult=console.log('hello')
+console.log(logResult)//undefined
+
+console.log('hello' && console.log("hello1"))
+console.log(undefined ||console.log("hello1"))
+
+
+//bitwise and or operator mostly not used
+
+console.log('' & 'hello')
+console.log('hi' &'hello')
+console.log('hello' & 'hello')
+console.log(2|6)
+console.log(2|8)
+console.log(0|8)
+console.log(4|6)
+console.log(-1|8)
+console.log(-2|-8)
+console.log(2|8)
+
+
+//not truthy -falsy falsy-truthy
+
+console.log(!null)
+console.log(Boolean(!null))
+console.log(!!null)
+//practice
+const logicalOperator=5&&6
+console.log(logicalOperator)
+
+const logicalOperator1=5||6
+console.log(logicalOperator1)
+
+console.log(true && false ||true)
+
+console.log(0||1 && 2||3)
+console.log(0||''||null||undefined||'default')
+
+let a=''
+let b=0
+let c=false
+console.log(a && b || c || "fallback")
+
+console.log(1 && 2 && null & 3)
+*/
