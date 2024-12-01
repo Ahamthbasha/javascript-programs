@@ -477,4 +477,347 @@ let c=false
 console.log(a && b || c || "fallback")
 
 console.log(1 && 2 && null & 3)
+
+
+//11.decision making or conditional making statement
+
+const userAge=28
+
+//if(true) console.log(userAge)
+//if(false) console.log("wont be executed")
+
+if(userAge>=28)
+    console.log("working professional")
+    console.log("see the output")
+
+if(userAge>=28){
+    console.log("working professional")
+}
+
+if(userAge>=25 && userAge<=50){
+    console.log("working professional")
+}else{
+    console.log("retired")
+}
+
+//exercise
+//prompt take input as string datatype
+let username=prompt("enter your name")
+let age=prompt("enter your age")
+console.log(username)
+console.log(age)
+
+if(age>=25 && age<=45){
+    console.log(`Mr.${username} you are working professional`)
+}else{
+    console.log(`you are not working professional`)
+}
+
+console.log(+null)
+console.log('34k')
+console.log(+'34 k')//Nan
+console.log(parseInt('34 df'))//convert string into number and eliminate the letters if no is start
+console.log(parseInt('34444'))
+console.log(parseInt('sdf 34 asdf'))//it give Nan because if letters in start
+console.log(parseInt(null))//Nan
+
+
+//exercise 
+const nameDefault=prompt("enter your name")||"procoder"
+const ageDefault=prompt("enter your age")||20
+
+console.log(nameDefault)
+console.log(ageDefault)
+
+//exercise
+
+const userName="ahamathbasha"
+const userAge=20
+
+if(userAge >=18 && userAge<=24){
+    console.log(`Mr. ${userName} is college student`)
+}
+
+if(userAge >=25 && userAge<= 45){
+    console.log(`Mr.${userName} is working professional`)
+}
+
+if(userAge >45){
+    console.log(`Mr.${userName} reads newspaper`)
+}
+
+//exercise
+
+const num=10
+
+if(num %2 == 0){
+    console.log("even")
+}
+
+if(num %2 != 0){
+    console.log("odd")
+}
+
+const number1=10
+const number2=20
+const number3=30
+
+if ((number1 > number2) && (number1 > number3)){
+    console.log(`number 1 is largest ${number1}`)
+}
+
+if((number2 > number1) && (number2 >number3)){
+    console.log(`number 2 is largest ${number2}`)
+}
+
+if((number3 >number1)&&(number3 >number2)){
+    console.log(`number 3 is largest ${number3}`)
+}
+
+
+
+//12.if else in javascript
+
+//In if condition if we give 5 if condition js will check all five conditions but in there will be one and only condition will going to be true but it check all conditions
+
+//Else if will avoid checking all the conditions if one condition is true does not check all other conditions
+ 
+//else if above conditions are not working run this else.
+
+//exercise
+const username2=prompt("enter your name")||"procoder"
+const userAge2=prompt("enter your age")||20
+
+if((userAge2>=0) && (userAge2<=4)){
+    console.log(`Mr.${username2} you are a child`)
+}else if((userAge2>4) && (userAge2<=17)){
+    console.log(`Mr.${username2} you are a school student`)
+}else if((userAge2>17) && (userAge2<=25)){
+    console.log(`Mr.${username2} you are a college student`)
+}else if((userAge2>25) && (userAge2<=45)){
+    console.log(`Mr.${username2} you are a wroking professional`)
+}else if(userAge2>45){
+    console.log(`Mr.${username2} you are a retired professional`)
+}else{
+    console.log(`Mr.${username2} please enter a valid age`)
+}
+
+//condition with truthy and falsy values
+console.log(!null)//true
+//exercise
+if(10){
+    console.log("given value is truthuy")
+}
+
+if(0){
+    console.log("given value is falsy")
+}
+
+if(0){
+    console.log("given value is truthy")
+}else{
+    console.log("given value is falsy")
+}
+
+//exerccise
+if condition can be executed based on the truthy and falsy.Here when the user does not put any information at that time null we receive which is falsy value but with the help of not(!)operator we convert it into truthy value.
+
+let userName3=prompt("enter your name")
+let userAge3=prompt("enter your age")
+
+if(!userName3){
+    userName3="burma"
+}
+console.log(`username is ${userName3}`)
+
+if(!userAge3){
+    userAge3=20
+}
+console.log(`userAge is ${userAge3}`)
+
+
+//exercise
+if the user enter input then only it will execute otherwise it wont execute because it receives falsy values or null.
+let userName4=prompt("enter your name")
+let userAge4=prompt("enter your age")
+
+if(userName4){
+    console.log(`your name is ${userName4}`)
+}
+
+if(userAge4){
+    console.log(` your age is ${userAge4}`)
+}
+
+
+//13.switch condition (it performs strict equality)
+
+//exercise else if based program
+
+const dayNumber=0
+if(dayNumber==1){
+    console.log("sunday")
+}else if(dayNumber==2){
+    console.log("monday")
+}else if(dayNumber==3){
+    console.log("tuesday")
+}else if(dayNumber==4){
+    console.log("wednesday")
+}else if(dayNumber==5){
+    console.log("Thursday")
+}else if(dayNumber==6){
+    console.log("Friday")
+}else if(dayNumber==7){
+    console.log("saturday")
+}else{
+    console.log("there will be no day like that")
+}
+
+
+//switch statement
+//here if you did not put break statement in any case at that where the condition gets satisfied there it start printing every condition and print output until the last.To avoid that we use break in cases.Atlast default keyword used if any condition is not matched. 
+//in defining the cases it does not follow any structure like 1 to 10 we can write the case in  unorder structure.
+// exercise
+const day=parseInt(prompt("enter a day between 1 to 7"))
+//here swith compare with the values so we put the variable name
+switch(day){
+    case 1:
+        console.log("sunday")
+        break;
+    case 2:
+        console.log("monday")
+        break;
+    case 3:
+        console.log("tuesday")
+        break;
+    case 4:
+        console.log("wednesday")
+        break;
+    case 5:
+        console.log("Thursday")
+        break;
+    case 6:
+        console.log("Friday")
+        break;
+    case 7:
+        console.log("saturday")
+        break;
+    default:
+        console.log("There is no day like that")
+}
+        
+
+//exercise
+
+const age_1=parseInt(prompt("enter your age"))
+//switch(true) we use because in case we evaluate the conditions either true or false.
+switch(true){
+    case (age_1 >0 && age_1<=4):
+        console.log("you are a kid")
+        break
+    case (age_1>4 && age_1<=17):
+        console.log("you are a school student")
+        break
+    case (age_1>17 && age_1<=25):
+        console.log("you are a college student")
+        break
+    case (age_1>25 && age_1<=45):
+        console.log("you are a working professional")
+        break
+    case (age_1>45):
+        console.log("you are a retired professional")
+        break
+    default:
+        console.log("please enter a valid age")
+}
+
+//Note:In switch statement we were comparing with the values or characters but in the above example with in the case we perform boolean expression conditions either true or false.In that manner we make the switch(true) otherwise within the bracket we put the variable name
+
+
+//exercise 
+
+//in the below example i understand switch case only return one case value or default value if multiple condition is true.
+//It will give the first true condition output others are neglected
+//if i give age_2=18.before condition i set as true so it give output as you are a school student but the correct answer is college student understand it.
+const age_2=parseInt(prompt("enter your age"))
+
+switch(true){
+    case (age_2 >0 && age_2<=4):
+        console.log("you are a kid")
+        break
+    case (true):
+        console.log("you are a school student")
+        break
+    case (age_2>17 && age_2<=25):
+        console.log("you are a college student")
+        break
+    case (age_2>25 && age_2<=45):
+        console.log("you are a working professional")
+        break
+    case (age_2>45):
+        console.log("you are a retired professional")
+        break
+    default:
+        console.log("please enter a valid age")
+}
+        
+
+//exercise
+
+const grade="C"
+
+switch(grade){
+    case "A":
+        console.log('you got marks between 90 to 100')
+        break
+    case "B":
+        console.log("you got mark between 80 to 90")
+        break
+    case "C":
+        console.log("you got marks between 70 to 80")
+        break
+    case "D":
+        console.log("you got mark betweeen 60 to 70")
+        break
+    case "E":
+        console.log("you got marks between 50 to 60")
+        break
+    case "F":
+        console.log("you got mark between 40 to 50")
+        break
+    default:
+        console.log("Restart")
+}
+
+
+
+//const grade=false
+const grade=null
+
+switch(grade){
+    case "A":
+        console.log('you got marks between 90 to 100')
+        break
+    case "B":
+        console.log("you got mark between 80 to 90")
+        break
+    case false:
+        console.log("you got marks between 70 to 80")
+        break
+    case null:
+        console.log("you got mark betweeen 60 to 70")
+        break
+    case "E":
+        console.log("you got marks between 50 to 60")
+        break
+    case "F":
+        console.log("you got mark between 40 to 50")
+        break
+    default:
+        console.log("Restart")
+}
 */
+//tricky
+// below answer will be false because datatype is different for each other.In case both are falsy value.
+console.log(false==null)//false
+console.log(false===null)//false
