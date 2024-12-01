@@ -931,4 +931,116 @@ const myUndefined=undefined//@67
 const myEmptyString=''//@77
 
 //when variables are created in memory.Variables will be in different side and values will be in different side.The value has address based on the address we connect it to the variable.by help of the address the variable will get the value.For better clarity see the visualize-variable address image.
+
+Address will be changeable.
+
+//16.Non-primitive datatypes
+//There is only one type of non primitive datatype that is called object.It is further divided into three categories.
+
+Arrays,functions,object literals
+
+
+//object are created with key-value pairs
+const user={} //empty object
+//user1 address 6543
+const user1={
+    firstName:"Akash",
+    lastName:"singh",
+    age:26,
+    education:12,
+    city:"Banglore"
+}
+//user2 address 6545
+const user2={
+    firstName:"Akash",
+    lastName:"singh",
+    age:26,
+    education:12,
+    city:"Banglore"
+}
+console.log(user)
+console.log(user1)
+console.log(user2)
+console.log(user1===user2)
+
+//In reference type or non-primitive type.It does not compare key and values.It compare the address.If address is equal value will be true otherwise false.
+
+const myName='Anurag'
+
+//for the below two object the addresses wont be same
+const myName1={}//@107823
+const myName2={}//@107825
+
+//but here the string has same address
+const user_Name1=''//@77
+const user_Name2=''//@77
+
+const object1={
+    firstName:"Adharsh"
+}
+
+const object2={
+    firstName:"ideal",
+    lastName:"school"
+}
+console.log(object2)
+//accessing the value based on two ways
+console.log(object2.lastName)//dot method
+console.log(object2["lastName"])//within the bracket we give key name
+
+const userDetail={
+    firstName:"Adarsh",
+    'last-Name':"singh",
+    Anurag:'Developer'
+}
+
+console.log(userDetail.firstName)
+//console.log(userDetail.last-Name)//here you will get reference error
+console.log(userDetail["last-Name"])
+console.log(userDetail["Anurag"])
+//If fields are not exists in the object it will give undefined
+
+console.log(userDetail.age)//undefined
+console.log(userDetail.networth)//undefined
+
+//with in the bracket we can also evaluate variables and expressions
+
+const movie="kgf"
+console.log(userDetail[movie])
+console.log(userDetail["first"+"Name"])
+
+
+const student={
+    firstName:"Ahamathbasha",
+    lastName:"procoder"
+}
+//updating your object
+//adding new fields with values
+student.age=26// first method
+//student.is-Present=20
+student["is-present"]=true
+
+console.log(student)
 */
+
+const studentDetails={
+    firstName:"vattaram",
+    lastName:"burma",
+    address:{
+        city:"Bangalore",
+        pinCode:"876876",
+        state:"karnataka",
+    },
+    moreDetails:{
+        population:9080706050,
+        area:"787 sq km"
+    }
+}
+
+console.log(studentDetails)
+console.log(studentDetails.firstName)
+console.log(studentDetails.address)
+console.log(studentDetails.address.city)
+console.log(studentDetails.address.state)
+
+//every nested objects create a variable address individually.
