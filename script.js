@@ -816,8 +816,119 @@ switch(grade){
     default:
         console.log("Restart")
 }
-*/
+
 //tricky
 // below answer will be false because datatype is different for each other.In case both are falsy value.
 console.log(false==null)//false
 console.log(false===null)//false
+
+//exercise 
+Ask favColor from user if favColor is not matched with the given condition.You display favColor is also my favorite color
+
+const favColor=prompt("enter your favorite color")
+//toLocaleLowerCase() convert the given input into lowercase without affecting the original
+switch(favColor.toLocaleLowerCase()){
+    case "red":
+        console.log("red is a passionate color")
+        break
+    case "blue":
+        console.log("blue is calming and serene")
+        break
+    case "green":
+        console.log("green symbolizes nature and growth")
+    default:
+        console.log(`${favColor} is also my favorite color`)
+}
+
+
+//14.Ternary operator(if else)
+
+console.log(true ? "Anurag":100)//anurag (first value)
+console.log(false? "Anurag":100)//100(second value)
+console.log(5>2?"Anurag":100)
+console.log(5>12?"Anurag":100)
+
+//exercise
+const gender="F"
+const userMessage=`${gender === "F" ? "she":"he"} is a college student`
+console.log(userMessage)
+
+//exercise
+const gender="F"
+const userMessage1=`${gender.toLocaleLowerCase()=="f"? "she":"he"} is a college student`
+console.log(userMessage1)
+
+//here we can use truthy and falsy values
+
+console.log(`${0?"she":"he"} is a college student`)
+console.log(`${''?"she":"he"} is a college student`)
+console.log(`${" "?"she":"he"} is a college student`)
+console.log(`${"0"?"she":"he"} is a college student`)
+
+const result=0?'Anurag':'Singh'
+console.log(result)
+
+const chaining=null?"Anurag":"singh"?12:0
+console.log(chaining)
+const chaining1=''?"hello":"hi"?0:1
+console.log(chaining1)
+
+const a=5
+const b=8
+const c=6
+
+// if(a>b && a>c){
+//     console.log(` a is largest ${a}`)
+// }
+// else if(b>c){
+//     console.log(`b is largest ${b}`)
+// }else{
+//     console.log(`c is largest`)
+// }
+
+let largest=a>b && a>c ? a:b>c ?b:c
+console.log(largest)
+
+
+//15.visualize the variable address
+
+//devtools-memory-take snapshot-find with variablevalue-you can see the variable value with its address and you can also see the variable name with its system context address
+
+//you can also see the address of the variables based on the system context.In system context it shows every variable value with its address
+
+//for boolean it does not have any storage name it shows only system@75.
+
+//Interesting part is variable can share same address if it has same value.for example take the two line of below code.But it depends on how it created.
+
+const name="basha"//@174841
+const name1="basha"//@174841
+
+//another example
+
+const movie="kgf"
+const movie1="k"+"g"+"f"
+console.log(movie)   //@207453
+console.log(movie1) //@273213
+
+//above example is the best reason because address will shared based on how a variable value is created.If we console movie,movie1 both will give same answer.But how it is created that defines the address.Here address is different.
+
+const firstName="Akash"
+const lastName="singh"
+const number=15
+
+//for null,undefined,true,false,empty string address will be not changed anywhere.
+//for number, string address will be changeable.
+
+//Below both have same value so both address are @75
+const isGraduate=false
+const hasjob=false
+//for true address will be @73
+const check2=true
+const check3=true
+
+const myNull=null//@71
+const myUndefined=undefined//@67
+const myEmptyString=''//@77
+
+//when variables are created in memory.Variables will be in different side and values will be in different side.The value has address based on the address we connect it to the variable.by help of the address the variable will get the value.For better clarity see the visualize-variable address image.
+*/
