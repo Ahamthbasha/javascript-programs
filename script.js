@@ -1021,7 +1021,6 @@ student.age=26// first method
 student["is-present"]=true
 
 console.log(student)
-*/
 
 const studentDetails={
     firstName:"vattaram",
@@ -1044,3 +1043,183 @@ console.log(studentDetails.address.city)
 console.log(studentDetails.address.state)
 
 //every nested objects create a variable address individually.
+
+//Nested objects helps in create a hierachy structure.BY the way we can easily manipulate the data in the object.
+
+//object can hold multiple datatypes values.
+
+//Address is only for the value not for the variables.Address of the value is given to the variables.
+
+//17.Object.freeze() and Object.seal()
+
+//context address @34393 
+
+let username="Anurag" //@12565 address
+//if we change the value of the username what will happen? value will be change .It sounds funny.Lets debug it.
+username="Rahul"//@83455 address.Behind the scenes "We change the address".So it change the value for the variables.
+console.log(username)
+//address will be changeable for one time you visit you see one address another time you visit you see another address.
+
+//object
+
+const user={
+    firstName:"Adarsh",
+    lastName:"singh",
+    Address:{
+        city:"Bangalore",
+        pincode:876876,
+        state:"karnataka",
+        moreDetails:{
+            population:909000090,
+            area:"787 sq km"
+        },
+    },
+    age:15,
+    isGraduate:false
+}
+
+//in the user object if you add a new property does the object address will change?No object address will be the same but the new property is also added in the object with its address
+
+user.mobileno=9080776050
+user.Address.street="Annanagar mudhal street"
+//In video my mentor told that if we add new property to the existing object.It does not change the address of the value or variable. In the given address the variable will be stored object addres or value or variable address wont be changed
+
+//I check the above mentioned statement.When i add the new property to the existing object it change the address of the object.I also think address value is not constant it will changeable so by the way of thinking based on the object address the new property is stored on the object address.
+
+
+const user_0={
+    firstName:"Adarsh",
+    lastName:"singh",
+    Address:{
+        city:"Bangalore",
+        pincode:876876,
+        state:"karnataka",
+        moreDetails:{
+            population:909000090,
+            area:"787 sq km"
+        },
+    },
+    age:15,
+    isGraduate:false
+}
+
+user_0={}//it shows error because for const we did not reassign the value.
+
+// At first the below object address is @300877 
+let user_5={
+    firstName:"Adarsh",
+    lastName:"singh",
+    Address:{
+        city:"Bangalore",
+        pincode:876876,
+        state:"karnataka",
+        moreDetails:{
+            population:909000090,
+            area:"787 sq km"
+        },
+    },
+    age:15,
+    isGraduate:false
+}
+console.log(user_5)
+
+//if we reassign the value to the object it will change the address of the object behind the scenes.
+//After reassigning the value to the object its address is changed.@330685.Address of the object is changed after reassigning the value to the object.
+user_5={}
+console.log(user_5)
+
+let movieName="basha"
+console.log(movieName)
+// delete property from the object
+let user_7={
+    firstName:"Adarsh",
+    lastName:"singh",
+    Address:{
+        city:"Bangalore",
+        pincode:876876,
+        state:"karnataka",
+        moreDetails:{
+            population:909000090,
+            area:"787 sq km"
+        },
+    },
+    age:15,
+    isGraduate:false
+}
+console.log(user_7)
+//By the below way we can delete the property from the object
+console.log(delete user_7.firstName)
+console.log(user_7)
+console.log(delete user_7.Address.moreDetails)
+console.log(user_7)
+
+
+//Object.seal will does not allow new property added to the object.Existing property modification allowed and deletion of the property won't be allowed.
+
+let user_8={
+    firstName:"Adarsh",
+    lastName:"singh",
+    Address:{
+        city:"Bangalore",
+        pincode:876876,
+        state:"karnataka",
+        moreDetails:{
+            population:909000090,
+            area:"787 sq km"
+        },
+    },
+    age:15,
+    isGraduate:false
+}
+
+//Object.seal will directly seal only the top level properties.It does not directly seal the entire Object if it is a nested object.
+Object.seal(user_8) 
+console.log(delete user_8.Address.city)//In the above description you can understand nested object properties will be deletable and modifiable and we can add new properties to the nested objects
+console.log(user_8)
+user_8.Address.city="TamilNadu"
+console.log(user_8)
+//To avoid nested objects behaviour we include seal for them also
+Object.seal(user_8.Address)
+Object.seal(user_8.Address.moreDetails)
+console.log(delete user_8.Address.city)//false
+
+//These are things done by Object.seal
+
+//Object.freeze we cannot modify or delete or adding new property
+let user_9={
+    firstName:"Adarsh",
+    lastName:"singh",
+    Address:{
+        city:"Bangalore",
+        pincode:876876,
+        state:"karnataka",
+        moreDetails:{
+            population:909000090,
+            area:"787 sq km"
+        },
+    },
+    age:15,
+    isGraduate:false
+}
+
+Object.freeze(user_9)
+//console.log(delete user_9.Address.moreDetails)//nested Object moreDetails will be deletable true
+console.log(delete user_9.firstName)//cannot delete
+user_9.firstName="lion"//wont be modified
+console.log(user_9)
+console.log(delete user_9.Address)//false it wont be deletable for better understanding see the variable address picture. It is in the top level object address
+console.log(delete user_9.Address.city)//true it will be deletable because it is in another address
+console.log(user_9)
+//After this it will comes under the Object.freeze property
+Object.freeze(user_9.Address)
+Object.freeze(user_9.Address.moreDetails)
+console.log(delete user_9.Address.moreDetails)
+
+
+//checking if the property is exist in the object or not
+//in keyword checks the key in present in the object or not.If it exists it gives true and if it is not exists it gives false.in keyword is case-sensitive.
+
+console.log('firstName' in user_9)//true
+console.log('username' in user_9)//false
+
+*/
