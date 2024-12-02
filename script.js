@@ -1222,4 +1222,81 @@ console.log(delete user_9.Address.moreDetails)
 console.log('firstName' in user_9)//true
 console.log('username' in user_9)//false
 
+
+
+//18.Array
+
+//arrays are behind the scenes it is objects.Inside the array we store the same data
+
+const fruitsCollection=['Apple',"Banana","Grapes","Dates"]
+console.log(fruitsCollection)//here see the prototype there will be object inside it.
+console.log(typeof fruitsCollection)//object=>fruit collection is array but its datatype is Object
+console.log(typeof [])//object
+console.log(typeof {})//object
+
+//behind the scenes these are non-primitive datatype so it gives object
+console.log([].concat)//it is a function
+console.log(typeof [].concat)//it gives function but here is should be like Object.There is no datatype namely function.
+
+//NOTE:array,function and object are non-primitive datatype
+
+const fruitsCollection1=['Apple',"Banana","Grapes","Dates"]
+console.log(fruitsCollection1)
+console.log(fruitsCollection1[2])
+fruitsCollection1[2]="Mango"//It change the original because it gives reference of the address
+console.log(fruitsCollection1)
+
+//here we create an array with variable const but the value of the array is updated how?
+//For example:In case of object created with const it can also modify or new or update the value which is based on the address.In that address we can store the new values and property. Here we did not update the address of the variable.Thats why it does not give any error.
+
+const fruitsCollection2=['Apple','Banana','Grapes','Dates']
+//fruitsCollection2=[]//if you try to update the address of the array you should get error because const wont allow to update.
+//update
+fruitsCollection2[3]='kiwi'
+console.log(fruitsCollection2)
+//add
+fruitsCollection2[4]="orange"
+console.log(fruitsCollection2)
+console.log(fruitsCollection2.length)
+
+//Array is commonly used to hold the same kind of data but array also supports to store different kinds of datatypes
+
+const movies=["kgf","vattaram",23,null,undefined,true,false,{}]
+console.log(movies)
+
+const fruits=["Apple","Banana","Grapes",{name:"Anurag",as:{age:23}}]
+console.log(fruits)
+
+const multiDArray=['Apple','Banana','Grapes',[2,3]]
+console.log(multiDArray)
+
+const favoriteMovies=["vattaram","vtk","Leo"]
+favoriteMovies[10]="vasoolraja mbbs"
+favoriteMovies[1000]="pk"
+console.log(favoriteMovies)
+//value will be added to its index specification in between the other index have undefined value
+console.log(favoriteMovies[7])
+
+//adding value at the end of the arry.How to do that
+const fruitCollection=["Apple","Grapes","Kiwi","Orange"]
+fruitCollection[fruitCollection.length]="papaaya"
+console.log(fruitCollection)
+fruitCollection[fruitCollection.length]="water melon"
+console.log(fruitCollection)
+//by the above way we can add elements at the end of the array.
+
+//another method push will put elements at the end of the array
+fruitCollection.push("jackfruit")
+console.log(fruitCollection)
+fruitCollection.push("sevvaazhai",88,null,undefined)//by using push method we can add multiple values at the end of the array
+console.log(fruitCollection)
+
+//remove the elements from the last Pop method
+
+console.log(fruitCollection.pop())
+console.log(fruitCollection)
+console.log(fruitCollection.pop())
+console.log(fruitCollection)
+console.log(fruitCollection.pop())
+console.log(fruitCollection)
 */
