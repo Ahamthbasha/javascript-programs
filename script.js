@@ -1299,4 +1299,241 @@ console.log(fruitCollection.pop())
 console.log(fruitCollection)
 console.log(fruitCollection.pop())
 console.log(fruitCollection)
+
+//here you can see the same behaviour of object in array also
+const newArray=[]
+console.log(newArray)
+newArray.firstName="Anurag"
+console.log(newArray)
+console.log(newArray.length)
+console.log(newArray.firstName)
+
+const newObject={}
+newObject.firstName="Anurag"
+console.log(newObject.firstName)
+
+//indexOf
+const name__1="vikram"
+console.log(name__1.indexOf("i"))
+
+//create one object and add one array inside it for the key 'array'
+
+const obj={arr:[1,2,3,4,5]}
+
+//Is it common to add key-value pairs directly to an array in JavaScript? Why or why not?
+
+//answer
+//Your understanding is partially correct — arrays are indeed special objects, but it's important to note that using key-value pairs with non-numeric keys in an array is uncommon and not recommended. Arrays should be used for ordered lists with numeric indices, and objects should be used when you need to store key-value pairs with named keys.
+
+//So, the better practice would be:
+//Use an array when you have an ordered collection of items.
+//Use an object when you need to store key-value pairs.
+
+
+Your understanding is partially correct — arrays are indeed special objects, but it's important to note that using key-value pairs with non-numeric keys in an array is uncommon and not recommended. Arrays should be used for ordered lists with numeric indices, and objects should be used when you need to store key-value pairs with named keys.
+
+So, the better practice would be:
+
+Use an array when you have an ordered collection of items.
+Use an object when you need to store key-value pairs.
+
+//19.ArrayMethods
+//shift change the original array remove element from the start.
+const evenNumbers=[0,2,4,6,8]
+console.log(evenNumbers.shift())
+console.log(evenNumbers)
+
+//Incase of push we delete the last element from the array but when you use the shift operator which delete the element from the first number.In js shift will affect the js engine.In starting you delete a no then the js engine will put index for every element in the array.Index of the array will changed.IN push we just delete the last element here you can't change the index just delete the element or index from the last
+
+console.log(evenNumbers.unshift(0))//add the element in the starting.
+console.log(evenNumbers)
+//here duplicate values are also be allowed
+
+console.log(evenNumbers.unshift(0))
+console.log(evenNumbers)
+
+//concat does not change the original array.It gives a new Array 
+const odd=[1,3,5,7]
+const even=[2,4,6,8]
+console.log(odd.concat(even))//[1, 3, 5, 7, 2, 4, 6, 8]
+console.log(odd + even)//1,3,5,72,4,6,8
+
+const divisibleBy2=[0,2,4,6,8]
+const animals=['Dogs','Cat','Rat']
+
+const addedArray1=divisibleBy2.concat(animals)
+const addedArray2=animals.concat()
+console.log(addedArray1)
+console.log(addedArray2)
+const oddNo=[1,2,3]
+const addedArray3=divisibleBy2.concat(animals,oddNo)//we can concatenate multiple values
+console.log(addedArray3)
+
+//indexOf array method
+// if the element is with in the array it give the index of the element otherwise it give -1 which denotes there is no element in the array.
+//Incase two element we have same like['a','b','c','a'].It gives the first index value of the array
+
+const n=[1,2,3,4,5,6,7,1]
+console.log(n)
+console.log(n.indexOf(1))
+console.log(n.indexOf(8))
+
+//includes which give true or false whether the element has present in the array or not
+console.log(n.includes(5))
+
+//reverse modify the original array
+console.log(n.reverse())
+console.log(n)
+
+//sort also modify the original array
+const char=['Dog','Cow',"Elephant"]
+console.log(char.sort())//['Cat', 'Cow', 'Dog']
+console.log(char)
+char.push("Cat")
+console.log(char.sort())//['Cat', 'Cow', 'Dog', 'Elephant']
+console.log(char)
+
+//Tricky
+//First of all it convert the character into utf-16 then it sort based on the utf no
+
+const names=['salmankhan',"Shahrukhhan","Amitab bacchan","rana"]
+console.log(names.sort())//here when you sort capital letters will comes first and lowercase letter will come last.
+console.log(names)
+
+//when you sort the no it will come like this it won't work for sorting in the no.To make it fit we use functions inside it.
+const numberss=[1,10,5,9,13,11,21,30,39,29,50]
+console.log(numberss.sort())
+console.log(numberss)//[1, 10, 11, 13, 21, 29, 30, 39, 5, 50, 9]
+
+
+//slice(start(includes),end(excludes)).It does not change the original array
+
+const pets=["Dog","Cat","Cow","Elephant","Tiger","Rat"]
+console.log(pets.slice())//It does not do anything empty
+console.log(pets)
+console.log(pets.slice(1))//from starting first index to end it will print because i did not specify the end index.
+//['Cat', 'Cow', 'Elephant', 'Tiger', 'Rat']
+console.log(pets.slice(1,4))//['Cat', 'Cow', 'Elephant']
+
+//splice(start,delete,include) will change the original array
+const pets2=["Dog","Cat","Cow","Elephant","Tiger","Rat"]
+console.log(pets2.splice(1,1))//i specify first index start and 1 element should be deleted.
+//['Cat']
+console.log(pets2)//['Dog', 'Cow', 'Elephant', 'Tiger', 'Rat']
+console.log(pets2.splice(2,2,'rabbit','tortoise'))//['Elephant', 'Tiger']
+console.log(pets2)//['Dog', 'Cow', 'rabbit', 'tortoise', 'Rat']
+
 */
+//exercise
+
+let ages = [83, 26, 32, 13, 23, 3, 36, 28, 64, 48]
+
+ages.push(19)
+console.log(ages)
+ages.shift(22)
+console.log(ages)
+ages.splice(3,0,17)
+console.log(ages)
+ages.sort()
+console.log(ages)
+//ascending order
+for(let i=0;i<ages.length;i++){
+    for(let j=0;j<ages.length;j++){
+        if(ages[i]<ages[j]){
+            let temp=ages[i]
+            ages[i]=ages[j]
+            ages[j]=temp
+        }
+    }
+}
+console.log(ages)
+//descending order
+for(let i=0;i<ages.length;i++){
+    for(let j=0;j<ages.length;j++){
+        if(ages[i]>ages[j]){
+            let temp=ages[i]
+            ages[i]=ages[j]
+            ages[j]=temp
+        }
+    }
+}
+
+console.log(ages)
+ages.pop()
+console.log(ages)
+ages.shift()
+console.log(ages)
+console.log(ages.includes(19))
+console.log(ages.indexOf(19))
+
+//exercise
+
+const event1Participants = ["Alice", "Bob", "Charlie"];
+const event2Participants = ["David", "Eve", "Frank"];
+const newsLetter=event1Participants.concat(event2Participants)
+console.log(newsLetter)
+
+//exercise
+//You have a list of daily temperatures recorded over a week. You want to extract the temperatures from the middle of the week (Tuesday to Thursday) for analysis. Use the slice method to get the sub-array of temperatures for these days.
+//const weeklyTemperatures = [72, 75, 79, 83, 78, 74, 70];
+// Write your code here
+// Expected Output: [75, 79, 83]
+const weeklyTemperatures = [72, 75, 79, 83, 78, 74, 70];
+console.log(weeklyTemperatures.slice(1,4))
+
+//20.Multidimensional array
+ //multidimesnsional arrays are also called as arrays inside array.
+
+//ex:
+const multidimesnsional=[[], ]
+console.log(multidimesnsional)
+const multiD=[['Adarsh',75],['Akash',90],['Anurag',100]]
+console.log(multiD)
+console.log(multiD[1])
+console.log(multiD[1][0])
+multiD[1][5]=100
+console.log(multiD)
+//Here it add value on the specified index others are empty if you access it you get undefined
+
+const ticTacToe=[["x",null,null],[null,null,"o"],["o",null,"x"]]
+ticTacToe[0]
+console.log(ticTacToe[0])// ['x', null, null]
+console.log(ticTacToe[0][0])//x
+
+//exercise
+//	
+// Given an array of nested arrays up to 3 levels deep. Write the code to print all the values of the innermost array.
+
+// const nestedArray = [
+
+// [[1, 2], 3, 4],
+
+// [5, [6, 7], 8],
+
+// [9, 10, [11, 12]],
+
+// ];
+
+// Write your code here
+
+// Expected Output //
+
+// 1, 2
+
+// 6,7
+
+// 11, 12
+
+const nestedArray = [
+
+    [[1, 2], 3, 4],
+    
+    [5, [6, 7], 8],
+    
+    [9, 10, [11, 12]],
+    
+    ];
+
+    console.log(nestedArray[0][0])
+    console.log(nestedArray[1][1])
+    console.log(nestedArray[2][2])
