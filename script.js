@@ -1423,7 +1423,7 @@ console.log(pets2)//['Dog', 'Cow', 'Elephant', 'Tiger', 'Rat']
 console.log(pets2.splice(2,2,'rabbit','tortoise'))//['Elephant', 'Tiger']
 console.log(pets2)//['Dog', 'Cow', 'rabbit', 'tortoise', 'Rat']
 
-*/
+
 //exercise
 
 let ages = [83, 26, 32, 13, 23, 3, 36, 28, 64, 48]
@@ -1524,16 +1524,18 @@ console.log(ticTacToe[0][0])//x
 
 // 11, 12
 
-const nestedArray = [
+// const nestedArray = [
 
-    [[1, 2], 3, 4],
+//     [[1, 2], 3, 4],
     
-    [5, [6, 7], 8],
+//     [5, [6, 7], 8],
     
-    [9, 10, [11, 12]],
+//     [9, 10, [11, 12]],
     
-    ];
+//     ];
 
-    console.log(nestedArray[0][0])
-    console.log(nestedArray[1][1])
-    console.log(nestedArray[2][2])
+//     console.log(nestedArray[0][0])
+//     console.log(nestedArray[1][1])
+//     console.log(nestedArray[2][2])
+
+*/
