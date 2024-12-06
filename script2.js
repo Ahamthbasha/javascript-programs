@@ -311,4 +311,143 @@ while(i<friends.length){
     i++
 }
 console.log(friends)
+
+
+//24.for loop 
+//print no
+console.log("program start")
+
+for(let i=1;i<10;i++){
+    console.log(i)
+}
+
+console.log("program ended")
+
+//print array value
+const brocampFriends=['nangopan','muthuthasan','vignesh','harrish','abin','lokesh','sathish','madhan']
+
+for(let i=0;i<brocampFriends.length;i++){
+    console.log(brocampFriends[i])
+}
+
+//print 1 to 100 even numbers 
+for(let i=0;i<=100;i++){
+    if(i%2==0){
+        console.log(i)
+    }
+}
+
+//fruits
+
+const fruits=['apple','grapes','oranges','kiwi']
+for(let i=0;i<fruits.length;i++){
+    fruits[i]=fruits[i]+" is a fruit"
+}
+console.log(fruits)
+
+//25 do while loop
+//it will execute atleast one time if the condition is false.
+//a normal example
+let i=0
+do{
+    console.log(i)
+    i++
+}while(i<=5)
+
+
+//do while correct use case example
+let j=10
+do{
+    console.log(j)
+    j++
+}while(j<=5)
+
+
+let k=0
+do{
+    console.log(k)
+    k++
+}while(k<=5)
+console.log(k)//you will get k value
+
+// for(let i=0;i<=5;i++){
+//     console.log(i)
+// }
+//console.log(i)//here you will get reference error because i is not defined which is block scope.
+
+// for(var i=0;i<=5;i++){
+//     console.log(i)
+// }
+// console.log(i)//var is global scope so you can get the value of i
+
+
+//print 1 to 100
+for(let n=1;n<=100;n++){
+    console.log(n)
+}
+
+
+//find the sum of 1000 numbers
+let result=0
+for(let i=1;i<=1000;i++){
+    result=result+i
+}
+console.log(result)
+
+//find the maximum no in an array
+let numbers=[5,10,2,8,15]
+let count=0
+for(let i=0;i<numbers.length;i++){
+    count++
+}
+console.log('The maximum no of elements in array',count)
+
+
+//reverse the string
+let string='hello'
+for(let i=string.length-1;i>=0;i--){
+    console.log(string[i])
+}
+//or
+let str='hello'
+let newStr=''
+for(let i=str.length-1;i>=0;i--){
+    newStr=newStr+str[i]
+}
+console.log(newStr)
+
+
+//count no fo vowels in a string
+let vowels=['a','e','i','o','u']
+let string='javascript'
+let count=0
+for(let i=0;i<vowels.length;i++){
+    for(let j=0;j<string.length;j++){
+        if(vowels[i]===string[j]){
+            count++
+        }
+    }
+}
+console.log(count)
+
+
+//fibonacci series
+let a=0
+let b=1
+
+for(let i=0;i<10;i++){
+    console.log(a)
+    let next=a+b
+    a=b
+    b=next
+}
+
+
+//find the factorial of the no
+let n=5
+let factorial=1
+for(let i=1;i<=n;i++){
+    factorial=factorial*i
+}
+console.log(factorial)
 */
