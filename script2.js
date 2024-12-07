@@ -451,3 +451,12 @@ for(let i=1;i<=n;i++){
 }
 console.log(factorial)
 */
+
+
+let no=[1,2,3,4,5]
+
+let square=no.map((i)=>{
+    return i*2
+})
+
+console.log(square)
