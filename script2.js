@@ -450,8 +450,6 @@ for(let i=1;i<=n;i++){
     factorial=factorial*i
 }
 console.log(factorial)
-*/
-
 
 let no=[1,2,3,4,5]
 
@@ -460,3 +458,103 @@ let square=no.map((i)=>{
 })
 
 console.log(square)
+
+
+//introduction to functions
+
+//if a code is repeatedly used we will make that code as a function .If we call that it will execute the code 
+//below line of code is repeatedly used
+console.log('HI')
+console.log('My name is Anurag Singh')
+console.log("I am a webdeveloper")
+
+console.log("*****************")
+
+console.log('HI')
+console.log('My name is Anurag Singh')
+console.log("I am a webdeveloper")
+
+console.log("*****************")
+
+console.log('HI')
+console.log('My name is Anurag Singh')
+console.log("I am a webdeveloper")
+
+console.log("*****************")
+
+//create this as function
+//function definition
+function introduceMe(){
+console.log('HI')
+console.log('My name is Anurag Singh')
+console.log("I am a webdeveloper")
+console.log("*****************")
+}
+console.log(introduceMe)
+introduceMe()//we call the function
+
+//when you enter introduceMe() atlast we did not get any return  value so it gives undefined instead of value
+// HI
+// My name is Anurag Singh
+//  I am a webdeveloper
+// *****************
+// undefined
+
+//for default return value of the function is undefined
+
+//without using return
+
+function introduce(){
+    console.log("HI")
+    console.log("My name is Anurag")
+}
+
+const returnValue=introduce()//result will be undefined
+console.log(returnValue)
+
+function checkReturn(){
+    console.log("Hi")
+    console.log("My name is Ahamath") 
+    return 2 //"value will be written"
+}
+const checkReturnValue=checkReturn()
+console.log(checkReturnValue)
+
+//when you calling the function where we we pass argument.User pass argument
+
+//in function definition we should have parameters
+
+function argPara(username){
+    console.log('Hi')
+    console.log(username)
+}
+
+argPara('Ahamathbasha')
+
+//dynamic
+
+function argPara2(username){
+    console.log("HI")
+    console.log(`my name is ${username}`)
+}
+
+argPara2("ahamathbasha")
+argPara2("madhan")
+argPara2("abin")
+
+
+//check if we did pass any argument to the function definition
+function argPara3(username){
+    console.log("Hi")
+    console.log(`my name is ${username}`)
+}
+
+argPara3()//here it would get undefined if we not pass any argument
+
+//setting default value or default parameters 2015 introduced
+function argPara4(username="web developer"){
+    console.log('Hi')
+    console.log(`my name is ${username}`)
+}
+argPara4()
+*/
