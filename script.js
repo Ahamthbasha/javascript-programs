@@ -184,7 +184,8 @@ let name="shahrukhan"
 console.log(name.indexOf("h"))
 console.log(name.indexOf("g"))//if the character or word not there gives -1
 
-//replace and replace all it also does not chang the string
+//replace and replace all it also does not change the string
+
 let message="hi , i am basha"
 console.log(message.replace("hi","hello"))
 console.log(message)
@@ -222,7 +223,7 @@ console.log(name.charCodeAt(0))
 
 //split it does not also change the original string
 let name="My name is Anurag"
-console.log(name.split())
+console.log(name.split())//[ 'My name is Anurag' ]
 console.log(name.split(''))
 console.log(name.split(' '))
 console.log(name.split("a"))
@@ -276,7 +277,7 @@ console.log(Math.round(2.6))
 console.log(Math.round(-2.1))
 console.log(Math.round(-2.5))
 
-//Math.random gives value 0 to 1.If we multiply with any given no it won't come from that limit. 
+//Math.random gives value 0 to 1. If we multiply with any given no it won't come from that limit. 
 for(let i=1;i<=5;i++){
 console.log(Math.random())
 }

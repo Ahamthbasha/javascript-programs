@@ -459,6 +459,21 @@ let square=no.map((i)=>{
 
 console.log(square)
 
+//checking prime or non prime no
+
+let a=9
+let count=0
+for(let i=2;i<=a;i++){
+    if(a%i==0){
+        count++
+    }   
+}
+if(count==1){
+    console.log("prime no")
+}else{
+    console.log("not a prime no")
+}
+
 
 //introduction to functions
 
@@ -557,4 +572,114 @@ function argPara4(username="web developer"){
     console.log(`my name is ${username}`)
 }
 argPara4()
+
+//setting default parameter
+function argPara5(username){
+    if(!username){
+        username="procoder"
+    }
+    console.log("hi")
+    console.log(`My name is ${username}`)
+}
+
+argPara5()
+argPara5("ahamathbasha")
+
+//setting defalt value
+function argPara6(username){
+    console.log("hi")
+    console.log(`My name is ${username || "procoder"}`)
+}
+argPara6()
+argPara6("ahamathbasha")
+
+//for two parameters or more
+//here it will avoid the second parameter
+function parameter(username){
+    console.log(`my name is ${username}`)
+}
+parameter("ahamathbasha","software engineer")
+
+//correct way
+function parameter2(username,designation){
+    console.log(`My name is ${username}`)
+    console.log(`I am ${designation}`)
+}
+
+parameter2("ahamathbasha","software engineer")
+
+
+//exercise
+
+function exercise(username,designation,age){
+    console.log(`my name is ${username}`)
+    console.log(`I am a ${designation}`)
+    console.log(`I am ${age} years old`)
+}
+
+exercise("ahamathbasha","software engineer",21)
+
+//here what kind of value give to the argument will become the datatype of the parameter
+
+function checkDatatype(username,designation,age){
+    console.log(typeof username)
+    console.log(typeof designation)
+    console.log(typeof age)
+}
+
+checkDatatype("basha","software engineer",21)
 */
+
+//result of a function will be given return keyword
+
+//question
+
+
+// 1.What is the primary purpose of using functions in programming?
+// To organize code and avoid repetitive tasks
+
+// 2.What are arguments in JavaScript functions?
+// Values passed to the function when it is called
+
+// 3.What are default parameters in JavaScript functions?
+//  Parameters that have default values assigned to them if no value is provided when the function is called 
+
+// 4.How do functions with arguments contribute to code reusability in JavaScript?
+// They allow functions to produce different results with different input
+
+// 5.What are parameters in JavaScript functions?
+// Named variables inside the parenthesis of the function definition
+
+
+// let count=0
+// for(let i=1;i<=100;i++){
+//     if(i==1){
+//         continue
+//     }
+//     for(let j=1;j<=i;j++){
+//         if(i%j==0){
+//             count++
+//         }
+//     }
+//     if(count==2){
+//         console.log(i)
+//     }
+//     count=0
+// }
+
+
+//generate a password length 8
+
+let capital="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+let small="abcdefghijklmnopqrstuvwxyz"
+let no="0123456789"
+
+let allCharacter=capital+small+no
+
+let password=""
+
+for(let i=0;i<8;i++){
+    const randomIndex=Math.floor(Math.random()*allCharacter.length)
+    password=password+allCharacter[randomIndex]
+}
+console.log(password)
