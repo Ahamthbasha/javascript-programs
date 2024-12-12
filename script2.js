@@ -628,7 +628,7 @@ function checkDatatype(username,designation,age){
 }
 
 checkDatatype("basha","software engineer",21)
-*/
+
 
 //result of a function will be given return keyword
 
@@ -683,3 +683,168 @@ for(let i=0;i<8;i++){
     password=password+allCharacter[randomIndex]
 }
 console.log(password)
+
+//function result will be given by return 
+
+//without using the return keyword in the function.The result will be undefined
+function addTwoNumbers(){
+    console.log(5+6)
+}
+
+const result=addTwoNumbers()
+console.log(result)//undefined
+
+function addTwoNumbers2(){
+    return 5+6
+}
+const result1=addTwoNumbers2()
+console.log(result1)//value will be printed
+
+function add(a,b){
+    return a+b
+}
+const result2=add(5,5)
+console.log(result2)//value will be printed
+
+//tricky
+//if we only use return keyword without any expression it will also give undefined
+
+function add2(){
+    return
+}
+
+const result3=add2()
+console.log(result3)//undefined
+
+function subtractTwoNumbers(a,b){
+    return a-b
+}
+
+const sub=subtractTwoNumbers(5,5)
+console.log(sub)
+
+//by using return we can return objects and arrays and functions also.
+
+//calling a function we pass some values or empty in the argument.That if we use expressions in the argument .The expressions will be evaluated first then it will pass to the parameter.
+
+function demo(a,b){
+    return a+b
+}
+
+const result7=demo(56+4,2+2*4)
+console.log(result7)
+
+//tricky
+
+function demo2(a,b){
+    return a+b
+}
+const result9=demo2(demo2(4,6),demo2(8,12))//It first evaluate the expression.demo2(4,6) function will evaluate and return 10.another parameter demo2(8,12) it evaluated function will return 20 atlast outer demo2 have 10 and 20 as argument value.demo2(10,20)
+console.log(result9)
+*/
+
+//question
+/* 
+
+1.What is a "return value" in the context of functions in JavaScript?
+A value that is returned by the function after its execution
+
+2.What is the purpose of the return keyword in JavaScript functions?
+To terminate the function's execution and specify the value to be returned to the caller
+
+3.What happens if a JavaScript function contains a return statement without specifying a value?
+The function will return undefined
+
+4.Can a JavaScript function have multiple return statements?
+Yes, multiple return statements can be used to return different values based on conditions
+
+*/
+//simple questions
+/*
+01.
+You are developing a web application that requires a function to calculate the area of various geometric shapes. Implement a JavaScript function named calculateArea that takes two parameters: shape and dimensions. The shape parameter will be a string specifying the type of shape (e.g., "rectangle", "circle", "right-triangle"), and the dimensions parameter will be an array containing the necessary dimensions for calculating the area of the specified shape.
+
+Your task is to implement the calculateArea function in such a way that it can calculate the area for different shapes based on the input provided.
+
+calculateArea("rectangle", [5, 10]); // should return 50
+
+calculateArea("circle", [7]); // should return approximately 153.94 (rounded to two decimal places)
+
+calculateArea("right-triangle", [3, 4]); // should return 6
+
+Ensure that your function handles cases where incorrect or insufficient parameters are provided. If the shape parameter is not recognized or the required dimensions are not provided for a particular shape, the function should return an appropriate error message.
+
+Write the calculateArea function in JavaScript.
+FORMULA
+1.RECTANGLE:LENGTH*WIDTH
+2.CIRCLE:MATH.PI*R*R
+3.RIGHTTRIANGLE:0.5*BASE*HEIGHT
+
+function calculateArea(shape,dimensions){
+    if(shape=="rectangle" && dimensions.length ===2){
+        return dimensions[0]*dimensions[1]
+    }
+    else if(shape=="circle" && dimensions.length===1){
+        return 3.14*Math.pow(dimensions[0],2)
+    }
+    else if(shape=="right-triangle" && dimensions.length===2){
+        return 0.5*dimensions[0]*dimensions[1]
+    }
+    else{
+        return "Error:the shape parameter does not exist"
+    }
+}
+
+console.log(calculateArea("rectangle",[5,10]))
+console.log(calculateArea("circle",[7]))
+console.log(calculateArea("right-triangle",[3,4]))
+console.log(calculateArea("dont know",[1,2]))
+
+
+2.
+You are developing a simple banking application and need to implement a function to calculate the interest earned on a savings account balance. Implement a JavaScript function named calculateInterest that takes two parameters: balance and rate. The balance parameter represents the current balance in the savings account, and the rate parameter represents the annual interest rate (in decimal form).
+
+Your task is to implement the calculateInterest function to calculate the interest earned on the balance based on the provided interest rate.
+
+calculateInterest(1000, 0.05); // should return 50
+
+calculateInterest(5000, 0.03); // should return 150
+
+Write the calculateInterest function in JavaScript.
+
+FORMULA:
+calculateInterest=balance*interest rate
+
+SOLUTION:
+
+function calculateInterest(balance,interest){
+    return balance*interest
+}
+
+console.log(calculateInterest(1000,0.05))
+console.log(calculateInterest(5000,0.03))
+
+3.You are developing a simple calorie tracking application and need to implement a function to calculate the total calories burned during a workout session. Implement a JavaScript function named calculateCaloriesBurned that takes an array parameter activities, where each element represents the calories burned for a specific activity.
+
+Your task is to implement the calculateCaloriesBurned function to calculate the total calories burned during the workout session based on the provided activities.
+
+calculateCaloriesBurned([100, 150, 200]); // should return 450
+
+calculateCaloriesBurned([50, 75, 100, 150]); // should return 375
+
+Write the calculateCaloriesBurned function in JavaScript.
+
+FORMULA:add the calories thats all
+
+function calculateCaloriesBurned(caloriesburned){
+    let sum=0
+    for(let i=0;i<caloriesburned.length;i++){
+        sum=sum+caloriesburned[i]
+    }
+    return sum
+}
+console.log("calories burned in workout session",calculateCaloriesBurned([100, 150, 200]))
+console.log("calories burned in workout session",calculateCaloriesBurned([50, 75, 100, 150]))
+*/
+
+
