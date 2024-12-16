@@ -164,10 +164,10 @@ var sayBye=function(){
 
 //function Definition
 //function declaration
-function add(){
-    console.log(2+2)
-}
-add()
+// function add(){
+//     console.log(2+2)
+// }
+// add()
 
 //function Definition
 //function expression is not hoist.It will be variable hoist.But when it comes to function it wont be hoisted which means if we try to call it will give error.
@@ -181,11 +181,11 @@ add()
 // }
 
 
-greet()
+// greet()
 
-var greet=function(){
-    console.log("hi")
-}
+// var greet=function(){
+//     console.log("hi")
+// }
 
 // we can define the function based on function expression and function declaration.Why we call function expression  because it has equal sign.
 //when we create a function based on the function expression we will assign the function to a variable let,const,var.
@@ -210,3 +210,24 @@ Yes, hoisting applies to both function declarations and definitions
 
 5.How does hoisting impact the order of execution of code in JavaScript?
 It ensures that all variable and function declarations are processed before any code is executed */
+
+
+//scope//
+
+//The variable in script scope cannot be accessed using window.username or window.userAge(or)window which shows undefined
+
+const username="Anurag"//it will show in script(value unavailable)
+let userAge=25//it will show in script(value unavailable)
+var a=50//global
+
+function add(){
+    const x=5//x and y will show in local under window with value unavailable
+    const y=8//
+    console.log(x+y)
+    //console.log(username)//global scope it will show tdz 
+}
+//console.log(x+y)//it shows not defined.Here it shows error.
+
+add()
+
+console.log('Program ended')
