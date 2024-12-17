@@ -66,7 +66,7 @@ function add(c,d){
 //see the visual representation of execution context image
 */
 
-//2.callstack
+//65.callstack
 //first global(or)annonymous execution context
 //sayHi()
 //add
@@ -103,7 +103,7 @@ A call stack overflow error occurs, indicating that there are too many nested fu
  For every function call, synchronous or asynchronous
 */
 
-///3.HOISTING////
+///67.HOISTING////
 
 /*
 var username="Ahamathbasha"
@@ -211,10 +211,14 @@ Yes, hoisting applies to both function declarations and definitions
 5.How does hoisting impact the order of execution of code in JavaScript?
 It ensures that all variable and function declarations are processed before any code is executed */
 
+/*
+//69.global scope and local scope//
+scriptscope and window object both are inside the global scope.
 
-//scope//
+//let and const variable will be in script scope
+//var and function variable will be in window object
 
-//The variable in script scope cannot be accessed using window.username or window.userAge(or)window which shows undefined
+//The variable in script scope cannot be accessed using window.username or window.userAge(or)window which shows undefined.In window if the variable is not exist it will show or return the value as undefined.
 
 const username="Anurag"//it will show in script(value unavailable)
 let userAge=25//it will show in script(value unavailable)
@@ -226,8 +230,24 @@ function add(){
     console.log(x+y)
     //console.log(username)//global scope it will show tdz 
 }
-//console.log(x+y)//it shows not defined.Here it shows error.
+//console.log(x+y)//it shows not defined.Here it shows error.Because both are in localscope which you cannot accessible outside the function.
 
 add()
 
 console.log('Program ended')
+
+//when we call a function there will local execution context will be created with this:Window where memory creation and code execution will happen.
+
+//questions//
+1.What does local scope refer to in JavaScript?
+Variables accessible only within a specific function
+
+2.What is global scope in JavaScript?
+Variables accessible anywhere in the code
+
+3.When does a variable have global scope in JavaScript?
+When it is declared outside any function or block
+
+4.Which keyword can be used to declare a variable with local scope in JavaScript?
+var,let and const.
+*/
