@@ -251,3 +251,75 @@ When it is declared outside any function or block
 4.Which keyword can be used to declare a variable with local scope in JavaScript?
 var,let and const.
 */
+
+//71.lexical and block scope
+
+function subtract(){
+    const x=5
+    const y=4
+    console.log(x-y)
+
+    function cartoon(){
+        cartoonName="jackiechan"
+        console.log(cartoonName)
+        console.log(x)//if you debug the program when you reach this line you will get closure with function name x:5.Here it will print the value
+    }
+    cartoon()
+}
+
+subtract()
+
+//in innerfunction can have ability to access its outer functions variable but outer function does not able to access the inner functions variable otherwise it will show errors.
+
+//lexical scope is inner function have the accessibility of outer function.That outer function have the accessibility of outer outer function up to the global scope.
+
+//If you debug the below given program you will get to see for all the function cartoon will be the closure.inner func can access team func and upto global scope.
+
+function cartoon(){
+    const name="jackiechan"
+    function character(){
+        const character="jackiechan"
+    }
+    function magic(){
+        const magic="bheema and uncle"
+    }
+    function team(){
+        const secret="agent black"
+    }
+    function inner(){
+        console.log(name)
+        console.log(character)
+        console.log(magic)
+        console.log(secret)
+    }
+    character()
+    magic()
+    team()
+    inner()
+
+}
+
+cartoon()
+
+{
+    //let and const are block 
+}
+
+//if you use 'use strict' in some cases if you miss the variable name(without using let,const, var) num2=10.It will print output to avoid those kinds of mistakes we use use strict mode which is really helpfull and show error.'use strict' should be in start of the program/
+
+//questions
+
+/*
+1.What is the key difference between lexical scope and block scope in JavaScript?
+ Lexical scope is determined by the location of variable declarations in the code, while block scope is limited to a specific block of code
+
+2.How are lexical and block scopes related in JavaScript?
+ Block scope is a subset of lexical scope
+
+ 3.What is lexical scope in JavaScript?
+Collection of all scopes determined by the location of variable declarations in the code
+
+4.When does a variable have block scope in JavaScript?
+When it is declared using the let or const keywords within a block of code
+
+ */
