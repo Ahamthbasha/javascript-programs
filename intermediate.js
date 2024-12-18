@@ -254,20 +254,20 @@ var,let and const.
 
 //71.lexical and block scope
 
-function subtract(){
-    const x=5
-    const y=4
-    console.log(x-y)
+// function subtract(){
+//     const x=5
+//     const y=4
+//     console.log(x-y)
 
-    function cartoon(){
-        cartoonName="jackiechan"
-        console.log(cartoonName)
-        console.log(x)//if you debug the program when you reach this line you will get closure with function name x:5.Here it will print the value
-    }
-    cartoon()
-}
+//     function cartoon(){
+//         cartoonName="jackiechan"
+//         console.log(cartoonName)
+//         console.log(x)//if you debug the program when you reach this line you will get closure with function name x:5.Here it will print the value
+//     }
+//     cartoon()
+// }
 
-subtract()
+// subtract()
 
 //in innerfunction can have ability to access its outer functions variable but outer function does not able to access the inner functions variable otherwise it will show errors.
 
@@ -275,31 +275,31 @@ subtract()
 
 //If you debug the below given program you will get to see for all the function cartoon will be the closure.inner func can access team func and upto global scope.
 
-function cartoon(){
-    const name="jackiechan"
-    function character(){
-        const character="jackiechan"
-    }
-    function magic(){
-        const magic="bheema and uncle"
-    }
-    function team(){
-        const secret="agent black"
-    }
-    function inner(){
-        console.log(name)
-        console.log(character)
-        console.log(magic)
-        console.log(secret)
-    }
-    character()
-    magic()
-    team()
-    inner()
+// function cartoon(){
+//     const name="jackiechan"
+//     function character(){
+//         const character="jackiechan"
+//     }
+//     function magic(){
+//         const magic="bheema and uncle"
+//     }
+//     function team(){
+//         const secret="agent black"
+//     }
+//     function inner(){
+//         console.log(name)
+//         console.log(character)
+//         console.log(magic)
+//         console.log(secret)
+//     }
+//     character()
+//     magic()
+//     team()
+//     inner()
 
-}
+// }
 
-cartoon()
+// cartoon()
 
 {
     //let and const are block 
@@ -323,3 +323,72 @@ Collection of all scopes determined by the location of variable declarations in 
 When it is declared using the let or const keywords within a block of code
 
  */
+
+//71.higher order functions
+//a function which will be created 
+
+// function a(b){
+//     console.log(typeof b)
+//     console.log(b)
+// }
+
+// a('Hi')
+// a({username:"Ahamathbasha",userAge:25})
+// a([1,2,3,4,5])
+// console.dir(a)//it print as object format
+//functions are behind the scenes objects
+
+//higher order function is a function which can be passed as an argument to the other function parameter.A function which return the other functions.A function can be assigned to the variable which all are higher order functions.
+
+//we pass a function as a argumebt to the other function parameter.
+// function a(b){
+//     console.log(b)
+//     b()
+// }
+
+// function sayHi(){
+//     console.log('hi')
+// }
+
+// a(sayHi)
+
+
+//Assigning the function to the variable
+// function no(){
+//     console.log(1,2,3)
+// }
+
+// no()
+// const noFunction=no
+//no()
+// noFunction() 
+
+//callback function
+//when the time we call a function within the function we pass an argument.The function which is passed inside the function which is called callback function
+
+
+// function add(fn){
+//     console.log(5)
+//     fn()
+// }
+
+// add(function (){
+//     console.log("hello")
+// })
+//Annonymous function is a function which does not have name (callback function)
+
+//Higher order function//
+
+/*
+1.What is a higher-order function in JavaScript?
+A function that operates on other functions by taking them as arguments or returning them
+
+2.What are callbacks in higher-order functions?
+They are functions passed as arguments to higher order functions to be executed later
+
+3.Which of the following is an example of a higher-order function in JavaScript?
+Array.prototype.map()
+
+4.Which of the following best describes a callback function in JavaScript?
+A function passed as an argument to another function to be executed later
+*/
