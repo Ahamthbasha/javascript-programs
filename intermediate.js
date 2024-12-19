@@ -482,7 +482,7 @@ The delay time before executing the function
 By using the clearInterval method
 
 5.Which of the following is a correct usage of setInterval in JavaScript?
-setInterval(() => myFunction, 1000)
+setInterval(myFunction, 1000)
 
 6.What happens if the delay time specified in setTimeout is negative?
 The function is executed immediately
