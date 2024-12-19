@@ -392,3 +392,114 @@ Array.prototype.map()
 4.Which of the following best describes a callback function in JavaScript?
 A function passed as an argument to another function to be executed later
 */
+
+//74.setTimeout and setInterval
+
+//setTimeout("hii")//it treats like a variable so show error
+
+// setTimeout('console.log(true)')
+// setTimeout('console.log("ahamathbasha")')
+//when we pass a string inside the setTimeout it will consider as a code behind the scene it will create a file there code will be written on that file or stored in that file.whatever we passed inside the setTimeout js consider it.For every settimeout function a new file will be created for that.
+
+//setTimeout will delay the execution of the below given line here we need to mention how many seconds.For representing the time we mention it in milliseconds.
+// setTimeout('console.log("Anurag Singh")',2000)
+
+// setTimeout(`console.log("Hi") 
+//     console.log("I am a damn good full stack developer")`,3000)
+//setTimeout will return a value if you paste the above line in the browser which is the timer id.before executing the program it will return the timer id.
+
+//by using the timer id we will stop the execution or clear the timeout
+
+// setTimeout('console.log("Hi-2")',4000)
+// setTimeout('console.log("Hi-4")',8000)
+// setTimeout('console.log("Hi-6")',12000)
+
+//15
+//clearTimeout(15) it will the destroy or it wont execute the code when we pass it.
+
+//storing the timer id in a variable
+//js decides its id
+// const timer1=setTimeout(`console.log("true")`,2000)
+// const timer2=setTimeout(`console.log("hello")`,4000)
+// const timer3=setTimeout(`console.log("bye")`,6000)
+
+// clearTimeout(timer2)
+// clearInterval(timer1)
+//////////////////TRICKY////////////////////////////////////////
+// function a(){
+//     console.log("Hello world!")
+// }
+
+// setTimeout(a,3000)//it is a higher order function here a function is passed as an argument into the setTimeout function.Here we did not call the function but the function a is called and also there is no separate file created for the setTimeout here if you execute the above program the file name will be intermediate.js
+
+
+////////////////////TRICKY////////////////////////////////////////
+// setTimeout(b,2000,'finish',999)
+
+// function b(){
+//     console.log(arguments)
+// }
+
+//After the time whatever you give it will be inside an array
+//Arguments(2) ['finish', 999, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+
+
+////////////////////WHICH ONE COMES FIRST///////////////////////////////
+
+// setTimeout('console.log("hello")',2000)
+// setTimeout('console.log("bye")',0)
+// setTimeout('console.log("hi")',6000)
+
+// console.log("without setTimeout bye")
+
+
+//setInterval will repeatedly print or execute the program or work after a certain period of time.It will execute infinitely.To stop this we use clear Interval to destroy this.
+
+//const timer4=setInterval('console.log("hello")',1000)
+//clearInterval(timer4)
+//for clearing this we use clearInterval and clearTimeout
+
+//we pass a annonymous function inside the setTimeout function
+// setTimeout(function() {
+//     console.log('hiii 1')
+// },0)
+
+// console.log("hiii 2")
+
+//////////////////////////QUESTIONS////////////////////////////////
+
+/*
+1.What is the purpose of the setTimeout function in JavaScript?
+ It is used to delay the execution of a function by a specified amount of time.
+
+2.How does setInterval differ from setTimeout in JavaScript?
+setInterval executes a function repeatedly at specified intervals, while setTimeout executes a function once after a delay.
+
+3.What does the second parameter of setTimeout represent?
+The delay time before executing the function
+
+4.In setInterval, how can you stop the repeated execution of a function?
+By using the clearInterval method
+
+5.Which of the following is a correct usage of setInterval in JavaScript?
+setInterval(() => myFunction, 1000)
+
+6.What happens if the delay time specified in setTimeout is negative?
+The function is executed immediately
+
+7.What will be the output of the following code?
+setTimeout(() => console.log("World"), 0);
+console.log("Hello");
+Hello World
+
+8.let counter=0
+const intervalid=setInterval(()=>{
+    console.log(counter)
+    counter++
+    if(counter === 5){
+        clearInterval(intervalid)
+    }
+ },1000)
+
+//  0 1 2 3 4  will be printed after 5 it will be destroyed
+*/
