@@ -503,3 +503,42 @@ const intervalid=setInterval(()=>{
 
 //  0 1 2 3 4  will be printed after 5 it will be destroyed
 */
+
+//76.Event Loop and callback Queue
+
+// console.log("hi-1")
+// console.log("hi-2")
+
+// function hello(){
+//     console.log("hello")
+// }
+
+// for(let i=0;i<i<=4;i++){
+//     console.log(i)
+// }
+
+// hello()//when we call a function it will go to the callstack and it will execute
+
+// console.log("hi-3")
+
+// setTimeout(function(){
+//     console.log("hi-3")
+// },0)//it will be ignored by the js engine atlast the result will be printed.setTimeout won't go to the callstack directly.It will go to the web Apis after the a period of time it will go to the callback queue.Then it will go to the callstack to execute it.
+
+// console.log("hi-4")
+
+//event loop duty is to check the callstack and callback queue .If the call stack is empty it takes function from callback queue and put it on the call stack for the execution.one by one function will be executed.
+
+//The code which goes to the webapi directly which are asynchronous function or code.Why it is stored there? because it will stop the execution of the function.so it will be waiting time otherwise the code will wait (or) for the function which makes our application without freezing the functionality.
+
+/*
+questions based on event loop and callback queue
+1.What is the role of the event loop in JavaScript?
+Ensuring JavaScript remains single-threaded and non-blocking. It puts functions in callback queue to the callstack whenever callstack it free.
+
+2.What happens during synchronous code execution in JavaScript?
+JavaScript remains single-threaded, and each line of code is executed one after the other, blocking further execution until completion.
+
+3.How are asynchronous tasks managed in JavaScript?
+They are scheduled in the callback queue and event loop, allowing them to be processed when the main thread is free.
+*/
