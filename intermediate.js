@@ -542,3 +542,244 @@ JavaScript remains single-threaded, and each line of code is executed one after 
 3.How are asynchronous tasks managed in JavaScript?
 They are scheduled in the callback queue and event loop, allowing them to be processed when the main thread is free.
 */
+
+
+//78.Returning functions with closures
+
+//function which takes another function is higher order function.
+
+//a function which is passed as an argument inside a function which is called as callback function.
+
+//from a function we can return a function
+
+//1.the variable is outside
+
+// const a=4
+// const b=6
+
+// function add(){
+//     console.log(a+b)
+// }
+
+// add()
+
+// console.dir(add)
+
+// //below function return a function 
+
+// function parent(){
+//     function add(){
+//         console.log(a+b)
+//     }
+//     return add//It return the function namely add
+// }
+
+// const add1=parent()
+// console.log(add1)
+
+//2.The variable inside the function
+//The variable in the parent function is used in the child function which is called closure that closure as a scope will be created
+// function parent(){
+//     const a=4
+//     const b=6
+
+//     function add(){
+//         console.log(a+b)
+//     }
+
+//     return add
+// }
+
+// const add1=parent()
+// console.log(add1)
+
+
+/////////////////////ANOTHER EXAMPLE//////////////////////////////////////
+
+// function outer(){
+//     function parent(){
+//         const a=4
+//         const b=6
+//         function add(){
+//             console.log(a+b)
+//         }
+//         return add
+//     }
+//     return parent()
+// }
+
+// const callOuter=outer()
+// console.log(callOuter)
+// console.log(callOuter())
+
+
+////////////////////////////DIRECTLY RETURN THE FUNCTION///////////////////////////////////
+
+// function outer(){
+//     function inner(){
+//         const a=5
+//         const b=5
+//     return function add(){
+//         console.log(a+b)
+        
+//     }
+// }
+// return inner()
+// }
+
+// const addition=outer()
+// console.log(addition)
+// console.log(addition())
+
+///////////////////////////RETURN THE ANNONYMOUS FUNCTION//////////////////////////////////
+
+// function outer(){
+//     function inner(){
+//         const a=5
+//         const b=5
+//        return function(){
+//         console.log(a+b)
+//         }
+//     }
+//     return inner()
+// }
+
+// const annonymous=outer()
+// console.log(annonymous)
+// console.log(annonymous())
+
+///simple note about closure
+
+//Outer functions variables are used in the inner functions that in scope section you can see  the closure.variables of outer functions is used in the inner functions which is called closure.
+
+/*
+    question about closure
+
+1.What are closures?
+Outer functions variables are used in the inner function which is closure. In the debugger side in scope section we will see the closure
+
+2.What will be the output of the following code snippet?
+
+function outerFunction() {
+
+    let outerVar = 10;
+
+    function innerFunction() {
+
+        console.log(outerVar);
+
+    }
+
+    return innerFunction;
+
+}
+
+let closureFunc = outerFunction();
+
+closureFunc();
+
+//answer:
+10 (Logged to console)
+
+3.
+What will be the output of the following code snippet?
+
+function createCounter() {
+
+    let count = 0;
+
+    return function() {
+
+        return ++count;
+
+    };
+
+}
+
+let counter1 = createCounter();
+
+let counter2 = createCounter();
+
+console.log(counter1());
+
+console.log(counter2());
+
+//answer: 1 (Logged to console), 1 (Logged to console)
+
+4.
+What will be the output of the following code snippet?
+
+let message = "Global";
+
+function outerFunction() {
+
+    let message = "Outer";
+
+    function innerFunction() {
+
+        console.log(message);
+
+    }
+
+    return innerFunction;
+
+}
+
+let closureFunc = outerFunction();
+
+closureFunc();
+
+//ans:outer (Logged to console)
+
+5.
+What will be the output of the following code snippet?
+
+let num = 5;
+
+function outerFunc() {
+
+    let num = 10;
+
+    setTimeout(function() {
+
+        console.log(num);
+
+    }, 1000);
+
+}
+
+outerFunc();
+
+ans:10 (Logged to console)
+
+6.
+What will be the output of the following code snippet?
+
+let a = 1;
+
+function outerFunc() {
+
+    let b = 2;
+
+    function innerFunc() {
+
+        let c = 3;
+
+        console.log(a + b + c);
+
+    }
+
+    return innerFunc;
+
+}
+
+let closureFunc = outerFunc();
+
+closureFunc();
+
+//ans:6 (Logged to console)
+
+7.What is the benefit of using closures in JavaScript?
+
+They enable encapsulation and data privacy by hiding variables within function scopes.
+*/
