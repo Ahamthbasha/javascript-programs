@@ -783,3 +783,87 @@ closureFunc();
 
 They enable encapsulation and data privacy by hiding variables within function scopes.
 */
+
+//81.FUNCTIONS AND METHODS DIFFERENCE
+
+//every function is not a method.But every method is a function
+
+//function
+function add(){
+    return a+b
+}
+
+//if a function is within an object is called method
+
+//const maths={}
+
+const maths={
+    E:2.7896523432,
+    a:function add(){
+        return 5+5
+    },
+    add:function(a,b){
+        return a+b
+    }
+}
+//if a function is used with the dot which is called method
+console.log(maths.a)
+console.log(maths.add)
+console.log(maths.add(5,5))
+
+const maths2={
+    sub:function sub(a,b){
+        return a-b
+    },
+    square:function square(a){
+        return a*a
+    },
+    multi:function (a,b){
+        return a*b  
+    }
+}
+
+console.log(maths2.sub)
+console.log(maths2.square)
+console.log(maths2.sub(10,5))
+console.log(maths2.square(5))
+
+//new syntax for this
+
+const maths3={
+    sub(a,b){
+        return a-b
+    },
+    cube(a){
+        //return a*a*a
+        return a ** 3
+    }
+}
+
+console.log(maths3.sub)
+console.log(maths3.sub(10,3))
+console.log(maths3.cube)
+console.log(maths3.cube(2))
+
+//array is a method behind the scene which is object
+//string is also method we use upperCase(),lowerCase().String is not a object but we use that method how? string has a object wrapper.string has a object.Every string has related object based on that object the methods are used.string is not a object.Basically js gives methods to use on strings.It has created a object.Whenever we use dot with string it access that object within that object every methods are defined
+
+/*
+QUESTIONS BASED ON FUNCTIONS AND METHODS
+
+1.What is the main distinction between functions and methods in JavaScript?
+Functions are standalone blocks of code, while methods are functions defined inside objects. 
+
+2.How are methods distinguished from functions in JavaScript syntax?
+Methods are functions defined inside objects, while functions are standalone blocks of code.
+
+3.When is a function considered a method in JavaScript?
+When it is placed inside an object as a property.
+
+4.What is the role of the return statement in both functions and methods in JavaScript?
+It is used to return a value from the function or method back to the caller.
+
+5.How do methods differ from functions in terms of invocation?
+There is no difference in how methods and functions are invoked.
+
+*/
