@@ -789,61 +789,61 @@ They enable encapsulation and data privacy by hiding variables within function s
 //every function is not a method.But every method is a function
 
 //function
-function add(){
-    return a+b
-}
+// function add(){
+//     return a+b
+// }
 
 //if a function is within an object is called method
 
 //const maths={}
 
-const maths={
-    E:2.7896523432,
-    a:function add(){
-        return 5+5
-    },
-    add:function(a,b){
-        return a+b
-    }
-}
+// const maths={
+//     E:2.7896523432,
+//     a:function add(){
+//         return 5+5
+//     },
+//     add:function(a,b){
+//         return a+b
+//     }
+// }
 //if a function is used with the dot which is called method
-console.log(maths.a)
-console.log(maths.add)
-console.log(maths.add(5,5))
+// console.log(maths.a)
+// console.log(maths.add)
+// console.log(maths.add(5,5))
 
-const maths2={
-    sub:function sub(a,b){
-        return a-b
-    },
-    square:function square(a){
-        return a*a
-    },
-    multi:function (a,b){
-        return a*b  
-    }
-}
+// const maths2={
+//     sub:function sub(a,b){
+//         return a-b
+//     },
+//     square:function square(a){
+//         return a*a
+//     },
+//     multi:function (a,b){
+//         return a*b  
+//     }
+// }
 
-console.log(maths2.sub)
-console.log(maths2.square)
-console.log(maths2.sub(10,5))
-console.log(maths2.square(5))
+// console.log(maths2.sub)
+// console.log(maths2.square)
+// console.log(maths2.sub(10,5))
+// console.log(maths2.square(5))
 
 //new syntax for this
 
-const maths3={
-    sub(a,b){
-        return a-b
-    },
-    cube(a){
-        //return a*a*a
-        return a ** 3
-    }
-}
+// const maths3={
+//     sub(a,b){
+//         return a-b
+//     },
+//     cube(a){
+//         //return a*a*a
+//         return a ** 3
+//     }
+// }
 
-console.log(maths3.sub)
-console.log(maths3.sub(10,3))
-console.log(maths3.cube)
-console.log(maths3.cube(2))
+// console.log(maths3.sub)
+// console.log(maths3.sub(10,3))
+// console.log(maths3.cube)
+// console.log(maths3.cube(2))
 
 //array is a method behind the scene which is object
 //string is also method we use upperCase(),lowerCase().String is not a object but we use that method how? string has a object wrapper.string has a object.Every string has related object based on that object the methods are used.string is not a object.Basically js gives methods to use on strings.It has created a object.Whenever we use dot with string it access that object within that object every methods are defined
@@ -865,5 +865,88 @@ It is used to return a value from the function or method back to the caller.
 
 5.How do methods differ from functions in terms of invocation?
 There is no difference in how methods and functions are invoked.
+
+*/
+
+//83.Arrow function in js
+//function expression
+//a function which is stored in the variable which is known as function expression
+
+//example for function expression.If we call this it will show error
+// const square=function(num){
+//     return num*num
+// }
+// console.log(square(4))
+
+//function declaration
+//a function which using the function keyword and creating the function is called function declaration.
+
+//example for function declaration.It wont show any error.
+// function double(num){
+//     return num*num
+// }
+
+// console.log(double(4))
+
+//Arrow function expression
+
+//we didnot use function keyword
+
+// const doubled=(num)=>{
+//     return num*num
+// }
+// console.log(doubled(4))
+//Making the arrow function syntax easier
+// const two=(num)=>{
+//     num*num
+// }
+
+// console.log(two(2))//it shows undefined
+
+//correct format.Arrow function implicitly return the output or value
+// const squaren=(num)=>num*num
+// console.log(squaren(5))
+
+// const addN=(num1,num2)=>num1+num2
+// console.log(addN(5,5))
+
+//below is a annonymous function and arrow function
+// setTimeout(()=>{
+//     console.log("hii")
+// },1000)
+
+//In case we have one parameter or argument.We dont need bracket.
+
+// const cube=n=>n*n*n
+// console.log(cube(2))
+
+//If we have two parameter or argument.We need bracket
+
+//const sub=(a,b)=>a-b//if you dont use bracket in this case it shows missing initializer
+// console.log(sub(10,5))
+
+// const random=()=>Math.random()
+// console.log(random())
+
+// const random2=()=>(Math.floor(Math.random() *10)+1)
+// console.log(random2())
+
+/*
+QUESTIONS FOR ARROW FUNCTIONS
+
+1.What is an arrow function in JavaScript?
+ A shorthand syntax for writing anonymous functions using the => arrow operator.
+
+2.How do arrow functions differ from other function declarations in JavaScript?
+They have a special syntax using the => arrow operator and do not require the function keyword. 
+
+3.What is the primary advantage of using arrow functions in JavaScript?
+They automatically bind to the this value of the enclosing scope.
+
+4.Which of the following statements about arrow functions in JavaScript is true?
+Arrow functions have a concise syntax and can omit curly braces for single-line expressions.
+
+5.How do arrow functions handle the this keyword compared to regular functions?
+Arrow functions automatically inherit the this value of the enclosing lexical scope.
 
 */
