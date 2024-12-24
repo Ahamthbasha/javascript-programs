@@ -950,3 +950,180 @@ Arrow functions have a concise syntax and can omit curly braces for single-line 
 Arrow functions automatically inherit the this value of the enclosing lexical scope.
 
 */
+
+//85.for of vs for in loop
+
+// const fruits=['banana','apple','peach','mango','grapes']
+
+// for(let i=0;i<fruits.length;i++){
+//     console.log(i)
+//     console.log(fruits[i])
+// }
+
+//For of loop which iterates over iterable objects such as arrays,strings,maps,sets and more.
+//the fruit variable will be in the global scope.The value will be changeable
+// for(var fruit of fruits){
+//     console.log(fruit)
+// }
+
+//by using let or const which will ne in block scope.The value will be changeable.After the loop finished it will be deleted from the scope or from the memory.
+// for(let fruit of fruits){
+//     console.log(fruit)
+// }  
+
+// const user="Anurag singh"
+
+// for(const letter of user){
+//     console.log(letter)
+// }
+
+
+//for iterate in object we use for in loop
+// const person={
+//     firstName:"John",
+//     lastName:"Doe",
+//     age:50,
+//     eyeColor:'blue',
+//     city:"Bangalore"
+// }
+//it will iterate based on the key
+// for(const property in person){
+//     console.log(property)
+// }
+
+//it will iterate on the key and get the value.By using bracket notation we access the loop.It is time consuming
+
+// for(const property in person){
+//     console.log(person[property])
+// }
+
+//The keys from the object will be stored in the array.
+// const personKeys=Object.keys(person)
+// console.log(personKeys)
+
+// for(let keys of personKeys){
+//     console.log(keys)
+// }
+//by the below way we can access the value
+// for(let keys of personKeys){
+//     console.log(person[keys])
+// }
+
+//The values from the object will be stored in the array.
+// const personValues=Object.values(person)
+// console.log(personValues)
+
+// for(let values of personValues){
+//     console.log(values)
+// }
+
+//The key and value will be stored inside array with multiple array
+
+// const personEntries=Object.entries(person)
+// console.log(personEntries)
+
+//The output will be like this
+//(5) [Array(2), Array(2), Array(2), Array(2), Array(2)]
+// 0: (2) ['firstName', 'John']
+// 1: (2) ['lastName', 'Doe']
+// 2: (2) ['age', 50]
+// 3: (2) ['eyeColor', 'blue']
+// 4: (2) ['city', 'Bangalore']
+
+//for in only used for iterating objects
+//for of used for iterable objects like arrays,string etc.,
+
+/*
+questions for for of and for in loop
+
+1.Why is a for...of loop preferred over a standard for loop?
+It simplifies iterating over iterable objects such as arrays, strings, and sets.
+
+2.What is the primary difference between the "for of" and "for in" loops in JavaScript?
+For of loop is used for iterating the iterable objects like arrays, string and more.For in loop used only for iterating the object.
+
+3.In which scope does "for of" loop create its variable in each iteration?
+It depends upon which keyword is used for the variable when we create a for...of loop.
+
+4.What is the significance of using the "for of" loop over the "for in" loop in JavaScript?
+The "for of" loop provides better performance compared to the "for in" loop.
+
+5.You are working on a JavaScript program where you have an object representing student information. The object student contains various properties such as name, age, and grade.
+
+Your task is to write a JavaScript code snippet using the for...in loop to iterate over each property of the student object and concatenate the property names into a string separated by commas.
+
+const student = {
+
+    name: 'John Doe',
+
+    age: 20,
+
+    grade: 'A'
+
+};
+
+let properties = "";
+
+// Write your code here
+
+console.log(properties);
+ANSWER:
+const student = {
+
+    name: 'John Doe',
+
+    age: 20,
+
+    grade: 'A'
+
+};
+
+let properties = "";
+
+console.log(properties);
+
+for(let key in student){
+    properties+=key+","
+}
+
+properties=properties.slice(0,-1)//-1 refers last character.
+console.log(properties)
+
+6.Write a program to print all the keys and values of the below object.
+
+ i. Using for...of loop along with Object.entries()
+
+ii. Using for...in loop
+
+const student = {
+
+name: 'John Doe',
+
+age: 20,
+
+grade: 'A'
+
+};
+
+ANSWER:
+const student = {
+
+    name: 'John Doe',
+    
+    age: 20,
+    
+    grade: 'A'
+    
+    };
+
+    const studentEntries=Object.entries(student)
+    console.log(studentEntries)
+    for(let value of studentEntries){
+        console.log(value)
+        console.log(`${value[0]}:${value[1]}`)
+    }
+
+    for(let key in student){
+        console.log(`${key}:${student[key]}`)
+    }
+*/
