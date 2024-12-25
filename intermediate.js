@@ -1127,3 +1127,110 @@ const student = {
         console.log(`${key}:${student[key]}`)
     }
 */
+
+//87.FOREACH array method.It is a higher order function.It is only used with array
+
+//const fruits=['banana','apple','peach','mango','grapes']
+
+// for(let fruit of fruits){
+//     console.log(fruit)
+// }
+
+// fruits.forEach(function(){
+//     console.log('hi')
+// })
+
+// fruits.forEach(function(fruit){
+//     console.log(fruit)
+// })
+
+//fruits.forEach((fruit)=>console.log(fruit))
+
+//forEach return value will be undefined.It iterates only.Its return value is undefined.
+
+// fruits.forEach((fruit)=>{
+//     console.log(fruit)
+//     return fruit
+// })
+//It value will be undefined
+
+// const numbers=[1,2,3,4,5]
+// let sum=0
+// numbers.forEach((no)=>sum+=no)
+// console.log(sum)
+
+/*
+1.What is the primary purpose of the forEach method in JavaScript?
+To loop through each element of an array
+
+2.In what scenario might you use the forEach method in JavaScript?
+When you need to iterate over the elements of an array and perform a specific operation on each element 
+
+3.What is a callback function in the context of the forEach method?
+A function that is passed as an argument to the forEach method and is executed for each element of the array
+
+4.Can the forEach method be used with objects in JavaScript?
+No, it is used only with arrays.
+
+5.const numbers = [1, 2, 3, 4, 5];
+Using the forEach loop, write a JavaScript code snippet to calculate the sum of all the numbers in the array.
+ANSWER:
+ const numbers=[1,2,3,4,5]
+ let sum=0 
+ numbers.forEach((no)=>sum+=no) 
+ console.log(sum)
+
+6.Given an array of strings, use the forEach method to count the number of times each string appears and store the result in an object.
+
+const fruits = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple'];
+
+const fruitCount = {};
+
+// Your code here
+
+console.log(fruitCount);
+
+// Expected Output: { apple: 3, banana: 2, orange: 1 }
+
+ANSWER:
+const fruits = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple'];
+let fruitCount = {};
+
+fruits.forEach((fruit)=>{
+    if(fruitCount[fruit]){
+        fruitCount[fruit]++
+    }else{
+        fruitCount[fruit]=1
+    }
+})
+
+console.log(fruitCount)
+
+
+7.Given an array of strings, use the forEach method to find the sum of the lengths of all strings in the array.
+
+const fruits = ['apple', 'banana', 'cherry'];
+
+let totalLength = 0;
+
+// Your code here
+
+console.log(totalLength);
+
+//Expected Output: 17
+ANSWER:
+const fruits = ['apple', 'banana', 'cherry'];
+let totalLength=0
+fruits.forEach((fruit)=>{
+    for(let i=0;i<fruit.length;i++){
+        totalLength++
+    }
+})
+console.log(totalLength)
+
+let length=0
+fruits.forEach((fruit)=>{
+    length+=fruit.length
+})
+console.log(length)
+*/
