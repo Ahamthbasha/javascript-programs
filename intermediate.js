@@ -1234,3 +1234,70 @@ fruits.forEach((fruit)=>{
 })
 console.log(length)
 */
+//88.MAP,FILTER,REDUCE.This are non destructive methods which does not change the original array.
+
+//map returns a array
+
+// const months=['january','february','march','april','may']
+
+// let upperCase=months.map((month)=>{
+//     console.log(month)
+//     return month.toUpperCase()
+// })
+
+// console.log(upperCase)
+
+//accessing the index
+// let upper=months.map((month,index)=>{
+//     console.log(index,month.toUpperCase())
+//     return index
+
+// })
+// console.log(upper)
+
+//for each return value will be undefined
+// let forEachReturnValue=months.forEach((month)=>{
+//     return month.toUpperCase()
+// })
+// console.log(forEachReturnValue)
+//Third parameter will show the entire array
+// let check=months.map((month,i,array)=>{
+//     console.log(array)
+// })
+
+//FILTER
+
+const Months=['January','February','March','April','May','December']
+
+const filterMonths=Months.filter((month)=>{
+    console.log(month)
+    return true//it will put the value in the array.if i set to false it wont put the value in the array
+})
+
+console.log(filterMonths==Months)//false
+console.log(filterMonths)
+
+const filterMonth=Months.filter((month)=>{
+    return month.length <=5
+})
+console.log(filterMonth)
+
+const filterMonthGreaterThanFive=Months.filter((month)=>{
+    return month.length>=5
+})
+console.log(filterMonthGreaterThanFive)
+
+const filterMonthsm=Months.filter((month)=>{
+    for(let i=0;i<month.length;i++){
+        if(month[i]=='M'||month[i]=='m'){
+            return month
+        }
+    }
+})
+console.log("filterMonthsmWords",filterMonthsm)
+//another approach
+
+const filterWordsM=Months.filter((month)=>{
+    return month.toLocaleLowerCase().includes('m')
+})
+console.log(filterWordsM)
