@@ -1267,37 +1267,461 @@ console.log(length)
 
 //FILTER
 
-const Months=['January','February','March','April','May','December']
+// const Months=['January','February','March','April','May','December']
 
-const filterMonths=Months.filter((month)=>{
-    console.log(month)
-    return true//it will put the value in the array.if i set to false it wont put the value in the array
-})
+// const filterMonths=Months.filter((month)=>{
+//     console.log(month)
+//     return true//it will put the value in the array.if i set to false it wont put the value in the array
+// })
 
-console.log(filterMonths==Months)//false
-console.log(filterMonths)
+// console.log(filterMonths==Months)//false
+// console.log(filterMonths)
 
-const filterMonth=Months.filter((month)=>{
-    return month.length <=5
-})
-console.log(filterMonth)
+// const filterMonth=Months.filter((month)=>{
+//     return month.length <=5
+// })
+// console.log(filterMonth)
 
-const filterMonthGreaterThanFive=Months.filter((month)=>{
-    return month.length>=5
-})
-console.log(filterMonthGreaterThanFive)
+// const filterMonthGreaterThanFive=Months.filter((month)=>{
+//     return month.length>=5
+// })
+// console.log(filterMonthGreaterThanFive)
 
-const filterMonthsm=Months.filter((month)=>{
-    for(let i=0;i<month.length;i++){
-        if(month[i]=='M'||month[i]=='m'){
-            return month
-        }
-    }
-})
-console.log("filterMonthsmWords",filterMonthsm)
+// const filterMonthsm=Months.filter((month)=>{
+//     for(let i=0;i<month.length;i++){
+//         if(month[i]=='M'||month[i]=='m'){
+//             return month
+//         }
+//     }
+// })
+// console.log("filterMonthsmWords",filterMonthsm)
 //another approach
 
-const filterWordsM=Months.filter((month)=>{
-    return month.toLocaleLowerCase().includes('m')
+// const filterWordsM=Months.filter((month)=>{
+//     return month.toLocaleLowerCase().includes('m')
+// })
+// console.log(filterWordsM)
+
+// const students=[
+//     {
+//         name:'Akash',
+//         age:21
+//     },
+//     {
+//         name:'Anurag',
+//         age:17
+//     },
+//     {
+//         name:"Aravind",
+//         age:21
+//     },
+//     {
+//         name:'Raman',
+//         age:23
+//     },
+//     {
+//         name:"rohit",
+//         age:18
+//     }
+// ]
+
+// const studentAgeAbove18=students.filter((student)=>{
+//     return student.age>=18
+// })
+// console.log(studentAgeAbove18)
+
+// const checkReturn=studentAgeAbove18.map(()=>{
+// //here it will return undefined
+// })
+// console.log(checkReturn)
+
+// const checkReturn2=studentAgeAbove18.map((student)=>{
+//     return student.name//here what you mention which only return
+// })
+
+// console.log(checkReturn2)
+
+// const methodChaining=students.filter((student)=>{
+//     return student.age>=18
+// }).map((student)=>{
+//     return student.name
+// }).filter((student)=>{
+//     return student.includes('A')
+// })//Multiple method we used here(filter,map,filter).Atlast which value is return.It is the output of that variable.
+
+// console.log(methodChaining)
+
+//REDUCE gives a single output
+
+//const nums=[1,2,3,4,5,6,7]
+
+// const sum=nums.reduce((accumulator,currentValue)=>{
+//     return accumulator+currentValue
+// },0)//here if i put (zero)0.Accumulator value initially zero.currenValue(1,2,3,4,5,6,7).otherwise it takes first value(1)as the accumulator and every number will be currentValue.
+// console.log(sum)
+
+// const add=nums.reduce((acc,cur)=>{
+//     return acc+cur
+// },100)//if we put 100 here it will acc value then it add with other no.So,answer will be wrong here
+// console.log(add)
+
+/////////////////////SIMPLE//////////////////////
+
+// const addition=nums.reduce((acc,nums)=>{
+//     return acc+nums
+// })
+// console.log(addition)//you will get correct answer.You dont need put any no here.
+
+// const multiplication=nums.reduce((acc,nums)=>{
+//     return acc*nums
+// })
+// console.log(multiplication)
+
+// const multi=nums.reduce((acc,cur)=>{
+//     return acc*cur
+// },0)//here you get wrong answer when multiply.Be aware where to initialize and where we should not initialize.
+//console.log(multi)
+
+/*
+QUESTIONS BASED ON MAP,FILTER,REDUCE
+1.How can you access the index of each element inside the "forEach" and "map" methods in JavaScript?
+By using the second argument of the callback function.
+
+2.What is the primary purpose of the "filter" method in JavaScript?
+To create a new array with only elements that pass a certain condition
+
+3.How does chaining of array methods work in JavaScript?
+It allows you to combine multiple array methods together to perform complex operations
+
+4.What does the "reduce" method do in JavaScript?
+ It applies a function against an accumulator and each element in the array to reduce it to a single value
+
+5.
+Given an array of numbers, create a new array that contains the squares of each number.
+
+const numbers = [1, 2, 3, 4, 5];
+
+// Your code here
+
+// Expected Output: [1, 4, 9, 16, 25]
+ANWER:
+const numbers=[1,2,3,4,5]
+
+const square=numbers.map((n)=>{
+    return n*n
 })
-console.log(filterWordsM)
+console.log(square)
+
+6.Given an array of numbers, filter out the even numbers and return a new array with only odd numbers.
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// Your code here
+
+// Expected Output: [1, 3, 5, 7, 9]
+ANSWER:
+const numbers=[1,2,3,4,5,6,7,8,9,10]
+
+const oddNo=numbers.filter((n)=>{
+    return n%2!=0
+})
+console.log(oddNo)
+
+7.Given an array of numbers, find the product of all the elements in the array.
+
+const numbers = [1, 2, 3, 4, 5];
+
+// Your code here
+
+// Expected Output: 120
+ANSWER:
+const numbers = [1, 2, 3, 4, 5];
+
+const product=numbers.reduce((acc,cur)=>{
+    return acc*cur
+})
+console.log(product)
+
+8.Given an array of numbers, create a new array that contains the squares of only the odd numbers.
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// Your code here
+
+// Expected Output: [1, 9, 25, 49, 81]
+ANSWER:
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const oddSquare=numbers.filter((n)=>{
+    return n%2!=0
+}).map((n)=>{
+    return n*n
+})
+
+console.log(oddSquare)
+
+9.Given an array of strings, count the number of times each string appears and return an object with the string as the key and the count as the value.
+
+const fruits = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple'];
+
+// Your code here
+
+// Expected Output: { apple: 3, banana: 2, orange: 1 }
+ANSWER:
+const fruits = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple'];
+
+const fruitCount={}
+
+for(let i=0;i<fruits.length;i++){
+    let count=fruits[i]
+    if(fruitCount[count]){
+        fruitCount[count]++
+    }else{
+        fruitCount[count]=1
+    }
+}
+console.log(fruitCount)
+
+10.Given an array of objects representing products with a price property, calculate the total cost of all products after applying a 10% discount.
+
+const products = [
+
+{ name: 'Product 1', price: 100 },
+
+{ name: 'Product 2', price: 200 },
+
+{ name: 'Product 3', price: 300 }
+
+];
+
+// Your code here
+
+//Expected Output: 540
+ANSWER:
+const products = [
+    { name: 'Product 1', price: 100 },
+    { name: 'Product 2', price: 200 },
+    { name: 'Product 3', price: 300 }
+  ];
+
+  let discount=10/100
+  const totalAmount=products
+  .map((product)=>{
+    return product.price*(1-discount)
+  })
+  .reduce((acc,curr)=>{
+    return acc+curr
+  },0)
+  console.log(totalAmount)  
+
+11.Given three arrays, names, ages, and cities, write a program to combine them into one array of objects where each object contains a name, age, and city property.
+
+const names = ['Alice', 'Bob', 'Charlie'];
+
+const ages = [25, 30, 35];
+
+const cities = ['New York', 'Los Angeles', 'Chicago'];
+
+// Your code here
+
+// Expected Output: [
+
+// { name: 'Alice', age: 25, city: 'New York' },
+
+// { name: 'Bob', age: 30, city: 'Los Angeles' },
+
+// { name: 'Charlie', age: 35, city: 'Chicago' }
+
+// ]
+
+ANSWER:
+let arr=[]
+for(let i=0;i<names.length;i++){
+    let obj={}
+    obj.name=names[i]
+    obj.age=ages[i]
+    obj.city=cities[i]
+    arr.push(obj)
+}
+console.log(arr)
+*/
+/*
+APOCALYPSE QUESTIONS
+1.So there is a Zombie Apocalypse and the military is checking everyone’s temperature to enter the refuge camp. But the military has made a major mistake. The thermometer shows the temperature lower by 2 degrees for each person but that could be fatal. Now fix the error by increasing the temperature of each person by 2 and generate a new array and assign the data to fixedTemperatures variable.
+
+Save everyone, soldier!
+
+Good Luck, with the mission!
+
+const celsiusTemperatures = [38, 40, 35, 37, 38, 37, 39, 33, 35]
+
+const fixedTemperatures = ....................
+ANSWER:
+const celsiusTemperatures = [38, 40, 35, 37, 38, 37, 39, 33, 35]
+
+const fixedTemperatures =celsiusTemperatures.map((n)=>{
+    return n+2
+})
+console.log(fixedTemperatures)
+
+2.Good, Job soldier!
+
+Here, is the solution to the problem before.
+
+const celsiusTemperatures = [38, 40, 35, 37, 38, 37, 39, 33, 35]
+
+const fixedTemperatures = celsiusTemperatures.map((temperature) => temperature + 2)
+
+ Now, you need to send the data to the higher-ups but they only take the data in Fahrenheit. So, now you need to convert the data in fixedTemperatures to Fahrenheit.
+ ANSWER:FAHRENHEIT FORMULA:(temperature*9/5)+32
+const celsiusTemperatures = [38, 40, 35, 37, 38, 37, 39, 33, 35]
+
+const fixedTemperatures = celsiusTemperatures
+.map((temperature) => temperature + 2)
+.map((n)=>{return (n*9/5)+32})
+console.log(fixedTemperatures)
+
+3.
+Good job, soldier! 
+
+Here, is the solution to the problem before.
+
+
+const celsiusTemperatures = [38, 40, 35, 37, 38, 37, 39, 33, 35]
+
+const fixedTemperatures = celsiusTemperatures.map((temp) => temp + 2)
+
+const fahrenheitTemperatures = fixedTemperatures.map((celsius) => (celsius * 9) / 5 + 32)
+
+Now, healthy people will be allowed to enter and people who are sick will be put in a quarantine for future checkups don’t worry.
+
+Now, you need to pick the people that are healthy to enter. But their temperature should be less than 104 degrees Fahrenheit.
+
+So, please filter out healthy people in a new array and save it in a variable called healthyPeople.
+
+ANSWER:
+const celsiusTemperatures = [38, 40, 35, 37, 38, 37, 39, 33, 35]
+
+const fixedTemperatures = celsiusTemperatures.map((temp) => temp + 2)
+
+const fahrenheitTemperatures = fixedTemperatures.map((celsius) => (celsius * 9) / 5 + 32)
+
+const healthyPeople=fahrenheitTemperatures.filter((temperature)=>{
+    return temperature<104
+})
+console.log(healthyPeople)
+
+4.Good job, Soldier!
+
+Here, is the solution to the problem before.
+
+const celsiusTemperatures = [38, 40, 35, 37, 38, 37, 39, 33, 35]
+
+const fixedTemperatures = celsiusTemperatures.map((temperature) => temperature + 2)
+
+const fahrenheitTemperatures = fixedTemperatures.map((celsius) => (celsius * 9) / 5 + 32)
+
+const healthyPeople = fahrenheitTemperatures.filter((temperature) => temperature < 104)
+
+Now, you have to check how much food is there in the warehouse. You have the weight of each container that the food is kept in kgs you need to calculate the total kgs of food in the warehouse. Hint, you need a single value at the end from a whole set of data.
+
+const celsiusTemperatures = [38, 40, 35, 37, 38, 37, 39, 33, 35]
+
+const fixedTemperatures = celsiusTemperatures.map((temperature) => temperature + 2)
+
+const fahrenheitTemperatures = fixedTemperatures.map((celsius) => (celsius * 9) / 5 + 32)
+
+const healthyPeople = fahrenheitTemperatures.filter((temperature) => temperature < 104)
+
+const warehouse = [86, 76, 98, 50, 12, 98, 85, 84, 81]
+
+const totalFood = .................
+ANSWER:
+const warehouse = [86, 76, 98, 50, 12, 98, 85, 84, 81]
+
+const totalFood =warehouse.reduce((acc,cur)=>{
+    return acc+cur
+})
+console.log(totalFood)
+
+5.You are Hero, Soldier!
+
+Here, is the solution to the problem before.
+
+const celsiusTemperatures = [38, 40, 35, 37, 38, 37, 39, 33, 35]
+
+const fixedTemperatures = celsiusTemperatures.map((temperature) => temperature + 2)
+
+const fahrenheitTemperatures = fixedTemperatures.map((celsius) => (celsius * 9) / 5 + 32)
+
+const healthyPeople = fahrenheitTemperatures.filter((temperature) => temperature < 104)
+
+const warehouse = [86, 76, 98, 50, 12, 98, 85, 84, 81]
+
+const totalFood = warehouse.reduce((acc, curr) => acc + curr)
+
+console.log(totalFood)
+
+So, it turns out now one more person decided to join the camp. And you already checked he is healthy. Just need to update the list of healthyPeopledata and add his actual temperature which is 98.6 Fahrenheit showing he is healthy and is permitted to enter.
+
+ANSWER:
+healthyPeople.push(98.6)
+console.log(healthyPeople)
+
+6.Good job, Soldier!
+
+Here, is the solution to the problem above.
+
+const celsiusTemperatures = [38, 40, 35, 37, 38, 37, 39, 33, 35]
+
+const fixedTemperatures = celsiusTemperatures.map((temperature) => temperature + 2)
+
+const fahrenheitTemperatures = fixedTemperatures.map((celsius) => (celsius * 9) / 5 + 32)
+
+const healthyPeople = fahrenheitTemperatures.filter((temperature) => temperature < 104)
+
+healthyPeople.push(98.6)
+
+So, some people from the quarantine are okay they just had normal fevers now they can enter the camp but to do that you need to enter their temperatures. And the data is given for the new people free from quarantine.
+
+const celsiusTemperatures = [38, 40, 35, 37, 38, 37, 39, 33, 35]
+
+const fixedTemperatures = celsiusTemperatures.map((temperature) => temperature + 2)
+
+const fahrenheitTemperatures = fixedTemperatures.map((celsius) => (celsius * 9) / 5 + 32)
+
+const healthyPeople = fahrenheitTemperatures.filter((temperature) => temperature < 104)
+
+healthyPeople.push(98.6)
+
+const newPeople = [95, 93.2, 100.4, 98.6, 102.2, 91.4, 95.5]
+ANSWER:
+const newPeople = [95, 93.2, 100.4, 98.6, 102.2, 91.4, 95.5]
+
+for(let i=0;i<newPeople.length;i++){
+    newPeople[i]=(newPeople[i]-32)*5/9
+}
+console.log(newPeople)
+
+7.You are a SuperHero.
+
+And here, is the solution.
+
+const celsiusTemperatures = [38, 40, 35, 37, 38, 37, 39, 33, 35]
+
+const fixedTemperatures = celsiusTemperatures.map((temperature) => temperature + 2)
+
+const fahrenheitTemperatures = fixedTemperatures.map((celsius) => (celsius * 9) / 5 + 32)
+
+let healthyPeople= fahrenheitTemperatures.filter((temperature) => temperature < 104)
+
+healthyPeople.push(98.6)
+
+const newPeople = [35, 34, 38, 37, 39, 33, 35]
+
+healthyPeople= healthyPeople.concat(newPeople)
+ANSWER:
+healthyPeople= healthyPeople.concat(newPeople)
+console.log(healthyPeople)
+*/
+
