@@ -1725,3 +1725,106 @@ healthyPeople= healthyPeople.concat(newPeople)
 console.log(healthyPeople)
 */
 
+//91.some and every methods return true or false.If we return truthy true will be value otherwise falsy
+
+// const evenNumbers=[0,2,4,6,8]
+
+// const value=evenNumbers.some((n)=>{
+//     return 'hello'//true will be the return value
+// })
+
+// console.log(value)
+
+// const result=evenNumbers.some((n)=>{
+//     return n > 4
+// })
+// console.log(result)
+
+// const even=[10,1,3,5,6,8]
+// const result2=even.some((n)=>{
+//     return n%2==0
+// })
+// console.log(result2)
+
+////////////////////////SOME//////////////////////////////////
+//A note about some method which check if there is any possible values which return true.If the array has only one true value or satisfy the condition it show or return true.if the true value found at first it does not iterate the array.The value true will stored and returned.
+
+// const n=[0,3,4,6,8]
+
+// const result=n.some((n,i)=>{
+//     if(n%2==1){
+//         console.log(i)
+//     }
+//     return n%2==1
+// })
+// console.log(result)
+
+//////////////////////////EVERY////////////////////////////////
+//Every method check every no or values in the array should be true otherwise it will return false.In every method if it got false stop checking the other no.
+// const n=[0,2,4,10,8]
+
+// const result3=n.every((no)=>{
+//     return no%2==0
+// })
+// console.log(result3)
+
+//Another example
+// const no=[0,2,1,3,5,6,8]
+// const result4=no.every((n)=>{
+//     return n%2==0
+// })
+// console.log(result4)
+
+/*
+QUESTIONS BASED ON SOME AND EVERY
+
+1.What is the primary purpose of the "some()" method in JavaScript?
+To check if at least one element in an array satisfies a condition.
+
+2.Which method in JavaScript is used to check if all elements in an array satisfy a condition?
+every()
+
+3.What is the main difference between the some() and every() methods in JavaScript?
+some() checks if at least one element satisfies the condition, while every() checks if all elements satisfy the condition.
+
+4.How do you use the some() method in JavaScript to check if an array contains at least one element that is greater than 5?
+arr.some(x => x > 5)
+
+5.What is the return value of the every() method in JavaScript when all elements in the array satisfy the condition?
+ true
+
+6.const searchResults = [
+
+    { name: 'Laptop', price: 1200, onSale: false },
+
+    { name: 'Smartphone', price: 800, onSale: true },
+
+    { name: 'Tablet', price: 500, onSale: false }
+
+];
+
+// Use the any method to check if any product in the search results is on sale.
+
+const isAnyProductOnSale = ..................................................................;
+
+console.log(isAnyProductOnSale);
+
+ANSWER:
+const isAnyProductOnSale=searchResults.some((product)=>{return product.onSale})
+console.log(isAnyProductOnSale);
+
+7.
+const examScores = [75, 80, 85, 90, 95];
+
+// Use the any method to check if all student passed the exam (scored 70 or higher).
+
+const didEveryStudentPass = ......................................................................;
+
+console.log(didEveryStudentPass);
+ANSWER:
+const didEveryStudentPass = examScores.every((scores)=>{
+    return scores >70
+})
+
+console.log(didEveryStudentPass);
+*/
