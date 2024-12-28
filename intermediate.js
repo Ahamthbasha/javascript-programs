@@ -1828,3 +1828,99 @@ const didEveryStudentPass = examScores.every((scores)=>{
 
 console.log(didEveryStudentPass);
 */
+
+//95.argument keywords in js
+
+//It will found inside the every function.In arrow function does not have argument.
+
+// function add(a,b){
+//     console.log(arguments)//Arguments(2) [1, 5, callee: ƒ, Symbol(Symbol.iterator): ƒ].It is a array of objects.
+//     return a+b
+// }
+// add(1,5)
+//whatever arguments we pass it will be stored in the array of objects.Incase if we define two parameter in a function.Two parameter will be taken but others will be in the argument.Thats why in a function the parameter is defined or not.The argument will be there
+
+// function sub(a,b){
+//     console.log(arguments)//Arguments(5) [1, 2, 3, 4, 5, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+//     return a-b
+// }
+
+// console.log(sub(1,2,3,4,5))//-1
+
+//arguments will accessed based on the index
+
+///////////////EXERCISE//////////////////
+
+// function add(...arguments){
+//     let sum=0
+//     for(let i=0;i<arguments.length;i++){
+//         sum+=arguments[i]
+//     }
+//     return sum
+// }
+
+// console.log(add(1,2,3,4,5,6,7,8,9,10))
+
+//////////////////EXERCISE////////////////////////////////
+
+// function add(){
+//     let sum=0
+//     for(let i=0;i<arguments.length;i++){
+//         sum+=arguments[i]
+//     }
+//     return sum
+// }
+// console.log(add(1,2,3,4,5,6,7,8,9,10))
+
+
+
+//FUNCTION EXPRESSION
+
+// const add=function(){
+//     let sum=0
+//     for(let i=0;i<arguments.length;i++){
+//         sum+=arguments[i]
+//     }
+//     return sum
+// }
+// console.log(add(1,2,3,4,5))
+
+//For ARROW FUNCTION you will get Uncaught ReferenceError: arguments is not defined.Argument keyword won't work here.Here we use rest parameter.
+// const add=(()=>{
+//     let sum=0
+//     for(let i=0;i<arguments.length;i++){
+//         sum+=arguments[i]
+//     }
+// })
+
+// console.log(add(1,2,3,4,5))
+
+///////ARROW FUNCTION USING REST PARAMETER///////
+// const add=((...arguments)=>{
+//     let sum=0
+//     for(let i=0;i<arguments.length;i++){
+//         sum+=arguments[i]
+//     }
+//     return sum
+// })
+
+// console.log(add(1,2,3,4,5))
+
+/*
+QUESTIONS BASED ON ARGUMENT KEYWORD
+
+1.What is automatically created within every function in JavaScript?
+The 'arguments' keyword
+
+2.What is the primary purpose of the 'arguments' keyword in JavaScript?
+To access all the arguments passed to a function.
+
+3.Is the arguments keyword an array in JavaScript?
+No, it is an array-like object.
+
+4.How do you convert the 'arguments' object to an array in JavaScript?
+Using the 'Array.from()' method
+
+5.What is the significance of the 'arguments' keyword in JavaScript for old browsers?
+It is a necessary feature for backward compatibility with older browsers.
+ */
