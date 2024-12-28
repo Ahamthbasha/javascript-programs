@@ -1924,3 +1924,72 @@ Using the 'Array.from()' method
 5.What is the significance of the 'arguments' keyword in JavaScript for old browsers?
 It is a necessary feature for backward compatibility with older browsers.
  */
+
+//97.DEFAULT PARAMETER
+
+// function multiply(a,b){
+//     return a*b
+// }
+// console.log(multiply(2,5))
+//console.log(multiply(5))//NAN because two argument is required.To avoid this kind of scenario we use default parameter.b becomes undefined
+
+//default parameter used in the below function
+// function multi(a,b=2){
+//     return a*b
+// }
+// console.log(multi(1,2))//2
+// console.log(multi(10))//10
+// console.log(multi(2,undefined))//4
+// console.log(multi(2,null))//0
+// console.log(multi(2,''))//0
+
+// function rollDice(){
+//     return Math.floor(Math.random()*6)+1//give no between 1 to 6
+// }
+// console.log(rollDice())
+
+// function rollDice2(no=1){
+//     return Math.floor(Math.random()*no)+1
+// }
+// console.log(rollDice2(6))
+// console.log(rollDice2())//if you did not use default parameter you get NaN.
+
+// function roll(n){
+//     if(n==undefined){
+//         n=1
+//     }
+//     return Math.floor(Math.random()*n)+1
+// }
+
+// console.log(roll(5))
+// console.log(roll())
+// console.log(roll(undefined))
+
+/*
+QUESTIONS BASED ON DEFAULT PARAMETER
+
+1.What feature introduced in ES6 allows setting default values for function parameters?
+Default Parameters
+
+2.Default parameters in JavaScript are used when:
+
+ A function is called without passing any arguments AND 
+A function is called with undefined arguments
+
+3.What happens to null or false values in JavaScript multiplication?
+They are converted to zero
+
+4.How are default parameters set in JavaScript functions?
+By assigning values directly to parameters
+
+5.Write a JavaScript function called sendMessage that returns a message. Set the default value of name to "Myself" and the default value of msg to "Good Morning".
+
+// Write your code here
+
+console.log(sendMessage());
+ANSWER:
+function sendMessage(name="Myself",msg="Good Morning"){
+ return name+" "+msg
+}
+console.log(sendMessage())
+*/
