@@ -1993,3 +1993,82 @@ function sendMessage(name="Myself",msg="Good Morning"){
 }
 console.log(sendMessage())
 */
+
+//99.spread operator works both in array and string and objects and function.It splits the string into separate character or it split the given argument into single character.
+// const nums1=[1,2,3,4,5]
+// const nums2=[6,7,8,9,10]
+//array usage
+// const joinedArray=nums1.concat(nums2)
+// console.log(joinedArray)
+// const spread=[...nums1,...nums2]
+// console.log(spread)
+
+//string usage
+// const myName="hello"
+// const spread2=[...nums1,...nums2,myName]
+// console.log(spread2)
+
+//object usage
+// const user={
+//     name:"Anurag",
+//     age:25
+// }
+
+// const updatedUser={...user}//spread:it copy first leverl property only
+// console.log(updatedUser)
+
+//function usage(use arguments keyword)
+// function add(){
+//     let sum=0
+//     for(let i=0;i<arguments.length;i++){
+//         sum+=arguments[i]
+//     }
+//     return sum
+// }
+// console.log(add(1,2,3,4,5))
+// let numbers=[1,2,3,4,5,6,7,8,9,10]
+// console.log(add(...numbers))//in function calling time we use spread parameter
+//spread syntax requires iterable it does not iterate normal objects
+
+/*
+questions based on the spread operator
+
+1.What does the spread operator allow in JavaScript?
+ Merging arrays and objects
+
+2.How is the spread operator used for object copying in JavaScript?
+By creating shallow copies
+
+3.In JavaScript, where can the spread operator be used while calling a function?
+For passing arguments to the function
+
+4.What is one common use of the spread operator in JavaScript functions?
+For passing large argument lists
+
+5.What will be the output of this function when using the spread operator to pass arguments?
+
+function sum(x, y, z) {
+
+return x + y + z;
+
+}
+
+const numbers = [1, 2, 3];
+
+console.log(sum(...numbers));
+ANSWER:
+6
+
+6.What will be the output when using the spread operator with strings?
+
+const str = "hello";
+
+const chars = [...str];
+
+console.log(chars);
+
+ANSWER:
+["h", "e", "l", "l", "o"]
+
+*/
+
