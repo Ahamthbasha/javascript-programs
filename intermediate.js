@@ -1994,7 +1994,7 @@ function sendMessage(name="Myself",msg="Good Morning"){
 console.log(sendMessage())
 */
 
-//99.spread operator works both in array and string and objects and function.It splits the string into separate character or it split the given argument into single character.
+//99.spread operator works both in array and string and objects and function.It splits the string into separate character or it split the given argument into single character and store .
 // const nums1=[1,2,3,4,5]
 // const nums2=[6,7,8,9,10]
 //array usage
@@ -2071,4 +2071,105 @@ ANSWER:
 ["h", "e", "l", "l", "o"]
 
 */
+
+//101.REST PARAMETERS IN JS
+
+//it will be used in the parameter.It will take the argument in the array form.
+
+// function addition(...nums){
+//     console.log("nums.....",nums)//(10) [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+//     let sum=0
+//     for(let i=0;i<nums.length;i++){
+//         sum+=nums[i]
+//     }
+//     return sum
+// }
+// console.log(addition(1,2,3,4,5,6,7,8,9,10))
+//rest parameter group the element.spread parameter split the element in the array.
+
+// function addition(a,b,...nums){
+//     console.log(`a:${a} and b:${b}`)
+//     console.log(nums)
+//     let sum=0
+//     for(let i=0;i<nums.length;i++){
+//         sum+=nums[i]
+//     }
+//     return sum+a+b
+// }
+
+// console.log(addition(100,9,8,7,6,5,4,3,))
+
+//if we dont pass any value the parameter will receive it as a empty string.
+
+// function plus(...nums){
+//    let result= nums.reduce((acc,cur)=>{
+//        return acc+cur
+//     })
+//     return result
+// }
+
+// console.log(plus(1,2,3,4,5))
+
+// function plus2(...nums){
+//     return nums.reduce((acc,cur)=>acc+cur)
+// }
+
+// console.log(plus2(1,2,3,4))
+
+//different approach
+// function plus3(){
+//     return [...arguments].reduce((acc,cur)=>acc+cur)
+// }
+
+// console.log(plus3(2,4,6,8,10))
+
+// function plus4(){
+//     return Array.from(arguments).reduce((acc,cur)=>acc+cur)
+// }
+// console.log(plus4(1,2,3,4,5))
+
+/*
+QUESTION BASED ON REST PARAMETER
+
+1.What is the purpose of rest parameters in JavaScript functions?
+ANSWER:
+They allow handling an infinite number of arguments.
+
+2.Rest parameters must always be the last formal parameter in a function.
+ANSWER:
+true
+
+3.What can be passed to rest parameters in JavaScript?
+ANSWER:
+Any datatype
+
+4.How do you define a rest parameter in JavaScript?
+ANSWER:
+By using the '...' operator
+
+5.What will be the output of the following code using rest parameters?
+
+function concatenate(separator, ...strings) {
+
+return strings.join(separator);
+
+}
+
+console.log(concatenate(", ", "apple", "banana", "cherry"));
+
+ANSWER:
+apple, banana, cherry
+
+6.What will be the output of this function when using rest parameters?
+
+function multiply(...nums, multiplier) {
+
+return nums.map(num => num * multiplier);
+
+}
+
+console.log(multiply(1, 2, 3, 2));
+ANSWER
+syntax error
+*/ 
 
