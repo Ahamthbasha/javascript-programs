@@ -2173,3 +2173,193 @@ ANSWER
 syntax error
 */ 
 
+//103.DESTRUCTURING IN JS
+
+//ARRAYS,OBJECTS and USED IN PARAMETERS
+
+//const colors=['red','green','yellow','pink','black']
+
+//normal way
+// const color1=colors[0]
+// const color2=colors[1]
+// const color3=colors[2]
+// console.log(color1)
+// console.log(color2)
+// console.log(color3)
+
+//destructuring array in right side we assign the variable name in an array and the left side we put the array name.in array destructing order matters
+// const [a,b,c,d,e,f]=colors
+// console.log(a)
+// console.log(b)
+// console.log(c)
+// console.log(d)
+// console.log(e)
+// console.log(f)//colors array the values are over so it show undefined.
+
+//if you want to directly access the third or fourth value follow the below method
+
+// const[,,colorThree]=colors
+// console.log(colorThree)
+
+//Another way to directly access the values.Here specify the index and assign with the variable like key:value in an object.
+// const{3:color4}=colors
+// console.log(color4)
+
+//OBJECT DESTRUCTURING
+
+// const user={
+//     name:"Anurag",
+//     age:25,
+//     address:{
+//         city:"Bangalore",
+//         state:"Karnataka",
+//     }
+// }
+
+// const name=user.name
+// console.log(name)
+// const age=user.age
+// console.log(age)
+
+//destructuring
+//here you should give the correctproperty name otherwise it will put undefined there.
+// const {name,age,username}=user
+// console.log(name)
+// console.log(age)
+// console.log(username)//undefined
+
+//To avoid that we use this way
+//const {name:username1,age:userAge}=user//it take the name property and put the value in the username and userAge variable
+// console.log(username1)
+// console.log(userAge)
+
+//Multilevel destructuring
+
+// const{address}=user
+// console.log(address)//{city: 'Bangalore', state: 'Karnataka'}
+
+//by the below way unnecessary variables won't be created because we did not want the entire address we want the city and state value only
+// const{address:{city,state}}=user
+// console.log(city)
+// console.log(state)
+//console.log(address)
+
+//destructuring in functions
+
+// const user={
+//     name:"Anurag",
+//     age:25,
+//     address:{
+//         city:"Bangalore",
+//         state:"Karnataka",
+//     }
+// }
+
+// function intro(obj){
+//     console.log(obj)//{name: 'Anurag', age: 25, address: {…}}
+// }
+
+// intro(user)
+
+//here in the parameter i can destructure.Here order does not matters given key matters
+// function intro2({age,name}){
+//     console.log("Age",age)
+//     console.log("Name",name)
+// }
+// intro2(user)
+
+//parameter array destructuring
+// const color=['red','pink','yellow','rose']
+
+//first approach
+// function printColor([color1,color2]){
+//     console.log("color1:",color1,"color2:",color2)
+// }
+// printColor(color)
+
+//Accessing different values
+// function printColor2([color1,,,color4]){
+//     console.log("color1:",color1,"color4:",color4)
+// }
+// printColor2(color)
+
+//access value based on the index
+// function printColor3({3:color4}){
+//     console.log(color4)
+// }
+// printColor3(color)
+
+/*
+QUESTIONS BASED ON THE DESTRUCTURING
+
+1.What is the purpose of object destructuring in JavaScript?
+To efficiently extract values from objects and arrays
+
+2.How do you use object destructuring in JavaScript?
+None of the above
+
+3.When using object destructuring in JavaScript, what does it allow selective extraction of?
+Values based on their keys in the object
+
+4.const userProfile = {
+
+    username: 'adarsh',
+
+    email: 'adarsh@example.com',
+
+    age: 17,
+
+    country: 'India'
+
+};
+
+//Use object destructuring to extract the username and email properties from the userProfile object.
+
+console.log(`Username: ${username}, Email: ${email}`);
+ANSWER:
+const userProfile = {
+
+    username: 'adarsh',
+
+    email: 'adarsh@example.com',
+
+    age: 17,
+
+    country: 'India'
+
+};
+
+const {username,email}=userProfile
+console.log(`Username: ${username}, Email: ${email}`)
+
+5.What will be the output of the following code snippet using object destructuring?
+
+const { a, b, ...rest } = { a: 1, b: 2, c: 3, d: 4 };
+
+console.log(a, b, rest);
+ANSWER:
+
+1 2 { c: 3, d: 4 }
+
+6.Write the code to destructure 'user name' property of the below object.
+
+Note: There is a space between user and name and that is not a mistake.
+
+const obj = {'user name': 'ProCodrr'}
+
+ANSWER:
+const obj={'user name':"Procodrr"}
+console.log(obj)
+
+const{'user name':userName}=obj
+console.log(userName)
+
+7.Write the code to destructure 5th element of the fruits array directly without putting multiple commas and without destructuring other elements.
+
+const fruits = ['apple', 'banana', 'cherry', 'date', 'elderberry', 'fig', 'grape'];
+ANSWER:
+const fruits = ['apple', 'banana', 'cherry', 'date', 'elderberry', 'fig', 'grape'];
+
+const{4:fifthFruit}=fruits
+console.log(fifthFruit)
+*/ 
