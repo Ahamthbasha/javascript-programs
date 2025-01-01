@@ -78,3 +78,107 @@ By using the 'window.innerHeight' property
 4.What is the significance of the history object in the Browser Object Model (BOM)?
 It enables navigation control by keeping track of the user’s browsing history in the Browser Object Model (BOM)
 */
+
+//1-1-2025
+
+//DOCUMENT OBJECT MODEL(DOM)
+//in dom everything is object.
+//dev tools enter window
+//inside it you found document
+//enter document only. you get the entire html.It is behind the scenes an object.
+
+// console.log(typeof document)//'object'
+// console.dir(document)//you get various methods and properties in key value pairs.There you see children namely html,head and body.Every element in the document is object.
+
+//for element their will be corresponding object will be created.For that which are the children and how many children and who are the parents also be there stored in the array.This was done by HTML PARSER
+
+//HTML PARSER is a component in our browser.It will understand our html line by line and see which are the elements here.Based on the elements it create a corresponding object in the js memory.And connection of the child and parent also given by it.Every information in the html will also be in the document object with key value pairs
+
+//1.document.children
+//HTMLCollection [html]
+
+//2.document.children[0]
+//you get the entire html
+
+//3.document.children[0].children
+//HTMLCollection(2) [head, body]
+
+//4.document.children[0].children[0] or document.head
+//you get the head tag all part of the html
+
+//5.document.children[0].children[1] or document.body
+//you get the body tag all part of the html
+
+//6.document.body.children
+//HTMLCollection(7) [h1, hr, p, img, ul, p, script]
+
+//7.document.head.children
+//HTMLCollection(5) [meta, meta, meta, title, script, viewport: meta]
+
+//8.document.head.children[0]
+//<meta charset=​"UTF-8">​
+
+//9.document.body.children[0]
+//<h1>Forntend Development</h1>
+
+//10.console.dir(document.body.children[0]).Return value for this is undefined
+
+//11.document.body.children[0].innerHTML//'Frontend Development'
+
+//12.document.body.children[0].innerText//'Frontend Development'
+
+//NOW TRY TO MODIFY THE INNERHTML AND INNERTEXT
+
+//13.document.body.children[0].innerText="Ahamathbasha"
+// document.body.children[0].innerText
+// 'Ahamathbasha'
+
+//14.document.body.children[0].innerHTML="Ahamathbasha"
+//'Ahamathbasha'
+
+//WHAT IS THE DIFFERENCE BETWEEN INNERHTML AND INNERTEXT
+
+//INNERTEXT:innertext will show whatever we give.document..Inner text obey the css property.If it set display-none it wont show the text.
+// body.children[0].innerText="<i>Ahamathbasha</i>"
+
+//INNERHTML:innerhtml will update the text in the html tag usage.document.body.children[0].The text will support the html styles like italic and bold,etc.,innerHTML="<i>Ahamathbasha</i>"
+
+//TEXTCONTENT:textcontent will show the text.If stylesheet sets display-none or css to hide the text.That time also it show the text. 
+//document.body.children[0].textContent
+//'Ahamathbasha'
+
+//document.body.children[1].innertext="good developer"
+
+//15.document.body.children[4]
+//you will get the line of the tag
+
+//here we need to change the image
+//document.body.children[4].src="/javaScript-Compilers-2.webp"
+//'/javaScript-Compilers-2.webp'
+
+//dom manipulation:we can change the page.Document object model.In html we write in browser we have component namely html parser which will create a object according to the element.Atlast it will give a object in the name of document.it will be inside the window.window object represents the whole browser.Dom will be in the tree like structure.
+
+//const myParagraph=document.body.children[6]
+//you will get the tag
+// console.log(myParagraph)
+//by this way we can easily manipulate with the help of the variable
+
+//in element tab go to a tag right click on it.There a option like store globally will create a variable with names like temp1..,
+
+//self practice
+//document.body.children[5].children[3].children[1].src="/javaScript-Compilers-2.webp"
+/*
+QUESTIONS BASED ON DOM
+
+1.What is the primary purpose of the Document Object Model (DOM) in JavaScript?
+To represent the structure of an HTML document.
+
+2.Which of the following statements accurately describes the Document Object Model (DOM)?
+The DOM stores information from HTML documents in JavaScript variables and allows for dynamic modification of the web page's structure and content.
+
+3.What is the difference between textContent and innerHTML in HTML manipulation?
+textContent' is used to retrieve or set the text content of an element, while 'innerHTML' is used to retrieve or set the HTML content of an element.
+
+4.How do you create and access global variables in the DOM?
+By using the window object
+*/
