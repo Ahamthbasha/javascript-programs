@@ -182,3 +182,117 @@ textContent' is used to retrieve or set the text content of an element, while 'i
 4.How do you create and access global variables in the DOM?
 By using the window object
 */
+
+//109.selecting elements in js
+
+//1.getElementByTagName:Based on the tagname we can select the element.
+//document.getElementsByTagName('Img')
+// HTMLCollection(3) [img, img, img]
+//document.getElementsByTagName('Img')[0]
+//<img src="/images/css.png" alt="css roadmap" style="width: 100%; max-width: 600px"></img>
+
+//2.getElementByClassName:It gives the result as an array which has the classname.Its return value is empty array.
+//document.getElementsByClassName('css-image')
+//HTMLCollection [img.css-image]
+
+//3.getElementById:It is unique.The return value is null if nothing matches.If the name has given to other which one comes first in the html.It will display others are neglected.
+// document.getElementById("css-image")
+// <img src="/images/html-css-javascript.png" alt="html-css-javascript" style="width: 100%; max-width: 600px" title="Frontend Roadmap" class="css-image" id="css-image">
+
+//4.document.querySelector
+//If we pass class name put dot(.).If we pass id we should put (#).It also return the result which is comes first.
+// const a=document.querySelector('.css-image')
+// <img src="/images/html-css-javascript.png" alt="html-css-javascript" style="width: 100%; max-width: 600px" title="Frontend Roadmap" class="css-image" id="css-image2">
+
+//document.querySelector('#css-image')
+//<img src="/images/html-css-javascript.png" alt="html-css-javascript" style="width: 100%; max-width: 600px" title="Frontend Roadmap" class="css-image" id="css-image2"></img>
+
+//5.document.querySelectorAll('css-image')
+//It gives the entire matching elements including class and id.It gives a nodeList.Here we can use some methods like forEach like functions.
+
+//6.Attribut selector we will write in [].For example:[alt="javascript roadmap"]{border:4px solid pink}
+//document.querySelector('[alt="javascript roadmap"]')
+//<img src="/images/javascript.png" alt="javascript roadmap" style="width: 100%; max-width: 600px"></img>
+
+//7.Nestedselector
+//document.querySelector('ul li')
+//const image1=document.querySelectorAll('.css-image')
+//It will give the output as nodeList.
+//image1[0].src="link of the image"
+
+
+//Another approach to modify the image
+// const imageUrl=[
+//     "https://winnersstory.com/wp-content/uploads/2021/11/1-Shah-Rukh-Khan-Motivational-Quotes.jpg",
+//     "https://winnersstory.com/wp-content/uploads/2021/11/1-Shah-Rukh-Khan-Motivational-Quotes.jpg",
+//     "https://winnersstory.com/wp-content/uploads/2021/11/1-Shah-Rukh-Khan-Motivational-Quotes.jpg"
+// ]
+
+// const image1=document.querySelectorAll('.css-image')
+// console.log(image1)
+// image1[0].src=imageUrl[0]
+
+//By looping way
+
+// for(let i=0;i<imageUrl.length;i++){
+//     image1[i].src=imageUrl[i]
+// }
+
+//By using forEach loop
+
+// const imageUrl=[
+//     "https://winnersstory.com/wp-content/uploads/2021/11/1-Shah-Rukh-Khan-Motivational-Quotes.jpg",
+//     "https://winnersstory.com/wp-content/uploads/2021/11/1-Shah-Rukh-Khan-Motivational-Quotes.jpg",
+//     "https://winnersstory.com/wp-content/uploads/2021/11/1-Shah-Rukh-Khan-Motivational-Quotes.jpg"
+// ]
+// const image1=document.querySelectorAll('.css-image')
+// console.log(image1)
+
+// imageUrl.forEach((url,i)=>{
+//     image1[i].src=url
+// })
+
+//By using forEach in another approach
+
+// const imageUrl=[
+//     "https://winnersstory.com/wp-content/uploads/2021/11/1-Shah-Rukh-Khan-Motivational-Quotes.jpg",
+//     "https://winnersstory.com/wp-content/uploads/2021/11/1-Shah-Rukh-Khan-Motivational-Quotes.jpg",
+//     "https://winnersstory.com/wp-content/uploads/2021/11/1-Shah-Rukh-Khan-Motivational-Quotes.jpg"
+// ]
+// const allImages=document.querySelectorAll('.css-image')
+
+// allImages.forEach((image,i)=>{
+//     image.src=imageUrl[i]
+// })
+
+// in html collection we did not use methods like foreach.map or filter.In nodelist we can use the array methods
+
+//Below method shows that document.querySelector will search in whole document.The particular ul querySelector will search in that zone only.
+// const ul=document.querySelector('ul')
+// console.log(ul)
+// ul.querySelector('img')
+// <img src="/images/css.png" alt="css roadmap" style="width: 100%; max-width: 600px" class="css-image">
+
+//document.getElementById will give output.But when you use it with an element like (li.getElementById give error).
+
+//select a element in the dev tools.Right click copy.copy js path will give the querySelector command.
+
+/*
+question based on selecting elements in js
+
+1.Which method is commonly used to select multiple elements in the DOM using their tag names in JavaScript?
+getElementsByTagName()
+
+2.What is the purpose of the querySelectorAll() method in JavaScript?
+It selects all elements that match a specified CSS selector and returns them as a static NodeList.
+
+3.How can you select an element with the ID "example" using JavaScript?
+document.getElementById("#example")
+
+4.What does the querySelector() method return in JavaScript if no matching element is found?
+null
+
+5.Which method is used to select elements by their class name in JavaScript?
+getElementsByClassName()
+
+*/
