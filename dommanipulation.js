@@ -296,3 +296,63 @@ null
 getElementsByClassName()
 
 */
+//111.DIFFERENCE BETWEEN INNERTEXT AND TEXTCONTENT
+
+const paragraph=document.querySelector('p')
+console.log(paragraph)
+// console.log(paragraph.innerHTML)
+// paragraph.innerHTML="<h4>soorarai pottru</h4>"
+// console.log(paragraph.innerHTML)
+// console.log(paragraph.innerText)//It show the text like a paragraph.
+// console.log(paragraph.textContent)//It show the text with the format of newline and spaces.And it also display the hide text
+// console.log(paragraph.innerHTML)
+// {/* <b style="display:none;">Frontend development</b> is the development of the
+// <a href="https://en.wikipedia.org/wiki/Graphical_user_interface" target="_blank" title="Graphical user interface">graphical user interface</a>
+// of a website, through the use of
+// <a target="_blank" href="https://en.wikipedia.org/wiki/HTML">HTML</a>,
+// <a target="_blank" href="https://en.wikipedia.org/wiki/CSS">CSS</a>, and
+// <a target="_blank" href="https://en.wikipedia.org/wiki/JavaScript">JavaScript</a>, so that users can view and interact with that website. */}
+// console.log(paragraph.innerText)
+// is the development of the graphical user interface of a website, through the use of HTML, CSS, and JavaScript, so that users can view and interact with that website.
+// console.log(paragraph.textContent)
+// Frontend development is the development of the
+//       graphical user interface
+//       of a website, through the use of
+//       HTML,
+//       CSS, and
+//       JavaScript, so that users can view and interact with that website.
+
+///////////////////////////////////////////////
+
+//opacity:0 and pointer-events css property used to hide the text in that case innerText does not support it.The text will show.
+
+//display:none:wont show the hiddentext and visibility:hidden:wont show the hiddentext but atstart there will be gap.
+
+///guess yourself what will be the output
+
+// paragraph.innerHTML='<h1>Hi</h1>'
+// paragraph.innerText='<h1>Hi</h1>'
+// paragraph.textContent='<h1>Hi</h1>'
+
+/*
+questions based on difference between innerText and textContent in js
+
+1.What is the primary difference between the innerText and textContent properties in JavaScript?
+innerText retrieves or sets the content of an element including any rendered text visible on the screen, while textContent retrieves or sets the content of an element including all text nodes.
+
+2.In JavaScript, which property is more performance-friendly when dealing with text manipulation and is not affected by CSS styles?
+textContent
+
+3.What does the innerText property return in JavaScript?
+The text content of an element, without considering styling or CSS
+
+4.<div id="content">
+    <p>This is <span>inner</span> content.</p>
+</div>
+Which JavaScript code will update the text content inside the <div> element with the ID "content" to "New content"?
+
+const div = document.querySelector('#content');
+
+div.textContent = 'New content';
+
+*/
