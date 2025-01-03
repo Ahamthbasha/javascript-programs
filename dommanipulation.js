@@ -298,8 +298,8 @@ getElementsByClassName()
 */
 //111.DIFFERENCE BETWEEN INNERTEXT AND TEXTCONTENT
 
-const paragraph=document.querySelector('p')
-console.log(paragraph)
+// const paragraph=document.querySelector('p')
+// console.log(paragraph)
 // console.log(paragraph.innerHTML)
 // paragraph.innerHTML="<h4>soorarai pottru</h4>"
 // console.log(paragraph.innerHTML)
@@ -354,5 +354,71 @@ Which JavaScript code will update the text content inside the <div> element with
 const div = document.querySelector('#content');
 
 div.textContent = 'New content';
+
+*/
+
+//113.getAttributes and setAttributes
+
+//attributes are in a tag which is something equal to something.Example alt="java image" It is a attribute.Attribute give more info about the tag.ex:hello="world"
+
+//getAttributes
+
+// const attribute=document.querySelector('[procoder]')
+// console.log(attribute)
+//you will get the result as object.In js everything is object.You will get as a object with in that there will be a attribute section where which store as key and value.
+
+// const attribute2=document.querySelector('[procoder]').attributes
+// console.log(attribute2)
+//NamedNodeMap {0: procoder, procoder: procoder, length: 1}
+
+// const attribute3=document.querySelector('[procoder]').attributes.procoder
+// console.log(attribute3)
+//procoder="ahamathbasha"
+
+// const attribute4=document.querySelector('[procoder]').attributes.procoder.value
+// console.log(attribute4)
+// ahamathbasha
+
+/////////////////using getAttributes///////////////////////
+
+// const attribute5=document.querySelector('[procoder]').getAttribute('procoder')
+// console.log(attribute5)//ahamathbasha
+
+// const attribute6=document.querySelector('h2').getAttribute('class')
+// console.log(attribute6)//It will give the value in the class attribute
+
+////////////////////using setAttributes////////////////////////////////////
+
+//underscore(__hi) and string
+
+// const attribute7=document.querySelector('h2').setAttribute("title","helloworld")
+// console.log(attribute7)//<h2 class="fullStackDeveloper" title="helloworld">Full stack developer</h2>
+
+// const attribute8=document.querySelector('h2').setAttribute('id','heading')
+// console.log(attribute8)
+//<h2 class="fullStackDeveloper" id="heading">Full stack developer</h2>
+
+// const attribute8=document.querySelector('h2').setAttribute('id','heading')
+// const value=document.querySelector('h2').id
+// console.log(value)//heading
+
+// const attribute9=document.querySelector('h2').id="ahamathbasha"
+// console.log(attribute9)
+
+/*
+questions based on getAttribute and setAttribute
+
+1.How can you use the setAttribute method in JavaScript to set the ID and style for an HTML element?
+setAttribute("id", "elementID") and setAttribute("style", "cssStyle")
+
+2.<button id="myButton" class="btn">Click me</button>
+Which JavaScript code will change the id attribute of the button element to "newButton"?
+const button = document.getElementById('myButton');
+button.setAttribute('id', 'newButton');
+
+3.Suppose you have an image element with the following HTML code:
+<img id="myImage" src="image.jpg" alt="Example Image">
+const image = document.getElementById('myImage');
+image.setAttribute('src', 'newImage.jpg');
 
 */
