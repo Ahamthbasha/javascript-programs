@@ -422,3 +422,92 @@ const image = document.getElementById('myImage');
 image.setAttribute('src', 'newImage.jpg');
 
 */
+
+//115 how to apply styles
+
+//here it shows as an object with key value pairs.It shows all css property.It does not take from the file.If we write css in a file.The document wont show that file css.If we give style with in the tag.It will show in the css style declaration. 
+//console.log(document.querySelector('h1').style)
+//CSSStyleDeclaration {accentColor: '', additiveSymbols: '', alignContent: '', alignItems: '', alignSelf: '', …}
+
+//document.querySelector('h1').style.color="red"//it will modify the color
+// <h1 procoder="ahamathbasha" style="color: red;">Frontend Development</h1>
+//document.querySelector('h1').style.backgroundColor="black"
+//<h1 procoder="ahamathbasha" style="color: red; background-color: black;">Frontend Development</h1>
+
+//anchor tag color change
+//const anchor=document.querySelectorAll('a')
+// console.log(anchor)
+// for(let i=0;i<anchor.length;i++){
+//     anchor[i].style.color="green"
+// }
+
+// for(let link of anchor){
+//     link.style.color='teal'
+//     link.style.fontFamily="cursive"
+//     link.style.fontWeight=700
+//     link.style.textDecoration='none'
+// }
+
+//Another approach select a element from the developer tools and see the property.There you see the css property.Based on it we can style.
+
+//Everychanges only shown in the dom.
+
+//Another approach to apply style
+// const aTag=document.querySelectorAll('a')
+// for(let link of aTag){
+//     link.style.cssText=`
+//     color:red;
+//     font-family:cursive;
+//     font-weight:18px;
+//     text-decoration-line:none `
+// }
+
+// for(let link of aTag){
+//     //link.className='green-link'
+//     //link.setAttribute('class','green-link')
+//     console.log(link.classlist)//It will give the classname of the style in the tag or element
+//     //If you style a class which has already a style.The style will be applied.old style will be removed
+//     link.className='wavy-link'
+//     //If you want both give the both class name
+//     link.className='green-link wavy-link'
+// }
+
+//by the below way we can add or remove the class to the element.
+// document.querySelector('#hii').classList.add('text')
+// document.querySelector('#hii').classList.remove('text')
+
+// document.querySelector('#hii').classList.toggle('test')//if there is a classname it will remove otherwise add
+
+//good practices
+// const atag=document.querySelectorAll('a')
+// for(let link of atag){
+//     link.classList.add('green-link')
+//     link.classList.remove('green-link')
+// }
+
+/*
+questions based on how to apply styles through js
+
+1.Which method is commonly used in JavaScript to apply styles to HTML elements dynamically?
+style.setProperty()
+
+2.How can you add a CSS class to an HTML element using JavaScript for styling?
+Using the classList property
+
+3.Which method is used to remove a CSS class from an HTML element using JavaScript?
+classList.remove()
+
+4.Which JavaScript code applies a red background color and white text color to the button element with the ID "myButton" when clicked?
+
+const button = document.getElementById('myButton');
+
+button.style.backgroundColor = 'red';
+
+button.style.color = 'white'
+
+5.How can you add a CSS class named "highlight" to the paragraph element, making the text bold and blue?
+
+const paragraph = document.getElementById('myParagraph');
+
+paragraph.classList.add('highlight');
+*/
