@@ -511,3 +511,84 @@ const paragraph = document.getElementById('myParagraph');
 
 paragraph.classList.add('highlight');
 */
+
+
+//118.DOM TRAVERSAL
+
+const firstLink=document.querySelector("body > p:nth-child(4) > a:nth-child(2)")
+// console.log(firstLink)//a
+// console.log(firstLink.parentElement)//p
+// console.log(firstLink.parentElement.parentElement)//body
+// console.log(firstLink.parentElement.parentElement.parentElement)//html
+// console.log(firstLink.parentElement.parentElement.parentElement.parentElement)//null
+// console.log(firstLink.parentElement.parentElement.parentElement.parentNode)//#document
+
+//node is not an element.But every element is a node
+
+// console.log(firstLink.childNodes)//NodeList [text].It gives node
+// console.log(firstLink.children)//HTMLCollection [].It gives children element.
+
+
+// console.log(firstLink.parentElement.parentElement.children)//HTMLCollection(8) [h1, h2#hii.fullStackDeveloper, hr, p, img.css-image, ul, p, script, hii: h2#hii.fullStackDeveloper]
+
+// console.log(firstLink.parentElement.parentElement.childNodes)//NodeList(19) [text, h1, text, h2#hii.fullStackDeveloper, text, hr, text, p, text, img.css-image, text, ul, text, p, text, comment, text, script, text]
+
+//siblings:in front and below tags are siblings
+//The parent tag end will be the end of the siblings.Because within the boundary only siblings are accessible or it is ended
+
+//remember:siblings will be ended within the parent ending.
+
+// <p><a>1</a>2<a>3</a><a>4</a></p><a>1</a>
+//nextElementSibling gives the element fully
+// console.log(firstLink.nextElementSibling)//a namely html
+// console.log(firstLink.nextElementSibling.nextElementSibling)//a namely css
+// console.log(firstLink.nextElementSibling.nextElementSibling.nextElementSibling)//a namely javascript
+// console.log(firstLink.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling)//null
+
+//previousElementSibling
+// console.log(firstLink.previousElementSibling)//b
+// console.log(firstLink.previousElementSibling.previousElementSibling)//null
+
+//nextSibling gives the node
+// console.log(firstLink.nextSibling)//the value will be in the string but it is an object
+// console.dir(firstLink.nextSibling)//it shows in object form.
+
+/*
+question based on access parent sibling and children elements
+
+1.How can you access the parent element of an HTML element using JavaScript?
+Using the parentElement property
+
+2.Which JavaScript property is used to access the children elements of an HTML element?
+children
+
+3.
+Which JavaScript code will select the <ul> element and append a new <li> element with text content "Item 4" to it?
+
+<div id="parent">
+
+    <p>This is a paragraph</p>
+
+    <span>This is a span</span>
+
+    <ul>
+
+        <li>Item 1</li>
+
+        <li>Item 2</li>
+
+        <li>Item 3</li>
+
+    </ul>
+
+</div>
+ANSWER:
+
+const ul = document.querySelector('ul');
+
+const li = document.createElement('li');
+
+li.textContent = 'Item 4';
+
+ul.appendChild(li);
+*/
