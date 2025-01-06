@@ -515,7 +515,7 @@ paragraph.classList.add('highlight');
 
 //118.DOM TRAVERSAL
 
-const firstLink=document.querySelector("body > p:nth-child(4) > a:nth-child(2)")
+// const firstLink=document.querySelector("body > p:nth-child(4) > a:nth-child(2)")
 // console.log(firstLink)//a
 // console.log(firstLink.parentElement)//p
 // console.log(firstLink.parentElement.parentElement)//body
@@ -591,4 +591,62 @@ const li = document.createElement('li');
 li.textContent = 'Item 4';
 
 ul.appendChild(li);
+*/
+
+//difference between node and element
+
+// console.log(document.body.children)//HTMLCollection(2) [h1, script]
+// console.log(document.body.childNodes)
+//NodeList(9) [text, comment, text, h1, text, comment, text, script, text]
+//whatever we write in html it will create as a node.
+//console.log(document.body.childNodes[3])//<h1>Element vs node</h1>
+// console.log(document.body.childNodes[5])//<!-- Hellow world -->
+
+// console.dir(document.body.childNodes[5])
+
+//Node:related to a element which are node
+//element node[1]
+//attribut node[2]
+
+//console.log(document.body.attributes.style)//style="font-family:sans-serif"
+//console.dir(document.body.attributes.style)//node type[2]
+
+//if you need to see the node name and its type select the elements.In the property section it will show.
+// nodeName: "#comment"
+// nodeType: 8
+
+//document.body.innerText='Namaste world!!'
+
+//console.log(document.body.children)//HTMLCollection(2) [h1, script]
+
+//console.log(document.body.childNodes)
+//NodeList(11) [text, comment, text, h1, text, comment, text, comment, text, script, text]
+
+// console.log(document.body.childNodes[4])//" hello world "
+
+// console.log(document.body.childNodes[4].nodeValue)//hello world
+
+// console.log(document.body.childNodes[4].nodeValue="Namaste")//It will change that text.In the element section you will see the change where you change the older one fade out.There will be nodeValue "namaste" will be shown.
+
+//every element is a node.Every node is not an element
+
+/*
+questions based on difference between element and node
+
+1.What is the primary difference between an element and a node in the JavaScript DOM?
+An element is a specific type of node that corresponds to an HTML tag, while a node represents any object in the DOM tree, including elements, text, and comments.
+
+2.What is the relationship between node type and node name in JavaScript DOM?
+Node type represents the type of node (e.g., element, text, comment), while node name represents the specific HTML tag associated with an element node.
+
+3.<div id="parent">
+    <p>This is a paragraph</p>
+    <span>This is a span</span>
+    <!-- This is a comment -->
+</div>
+How can you programmatically determine the node type of the second child of the <div> element with the ID "parent" using JavaScript?
+
+const parent = document.getElementById('parent');
+const secondChild = parent.querySelector('span');
+console.log(secondChild.nodeType);
 */
