@@ -650,3 +650,6 @@ const parent = document.getElementById('parent');
 const secondChild = parent.querySelector('span');
 console.log(secondChild.nodeType);
 */
+
+//APPEND AND APPEND CHILD
+
