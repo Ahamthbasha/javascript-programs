@@ -135,8 +135,8 @@ console.log(num+5)
 alert("your message is here")
 console.log(alert("your message is here"))
 const alertResult=alert("no more data")
-console.log(alertResult)
-confirm("would you like to proceed")
+console.log(alertResult)//alert return value is undefined
+confirm("would you like to proceed")//its return value is true or false
 console.log(confirm("would you like to proceed"))
 console.log(confirm("would you like to proceed"))
 const ans=confirm(5>3)
@@ -155,7 +155,7 @@ alert("your name is "+name)
 /*
 const message='hello'
 console.log(message[0])
-console.log(message[11])
+console.log(message[11])//undefined
 console.log(message.length)
 //It wont change the original string or variable
 console.log(message.toUpperCase())
@@ -315,7 +315,7 @@ document.write(`area of the rectangle ${height * width}`)
 
 //tricky
 let result="hello"-5
-console.log(result)
+console.log(result)//NaN
 
 //8.Truthy falsy values
 
@@ -418,6 +418,7 @@ console.log(true || false)
 console.log(true && false)
 
 //It gives truthy or falsy values
+
 console.log(1 && 2)//starting 1 is truthy so it gives truthy values.It means it checks the another value.
 console.log(0 && 1) //starting 0 is falsy so it gives falsy value and does not go to other condition or no
 console.log(1||2)//starting truthy so it gives the starting value does not move to other no.Give 1 as a result
@@ -443,16 +444,16 @@ console.log(undefined ||console.log("hello1"))
 
 //bitwise and or operator mostly not used
 
-console.log('' & 'hello')
-console.log('hi' &'hello')
-console.log('hello' & 'hello')
-console.log(2|6)
-console.log(2|8)
-console.log(0|8)
-console.log(4|6)
-console.log(-1|8)
-console.log(-2|-8)
-console.log(2|8)
+console.log('' & 'hello')0
+console.log('hi' &'hello')0
+console.log('hello' & 'hello')0
+console.log(2|6)6
+console.log(2|8)8
+console.log(0|8)8
+console.log(4|6)6
+console.log(-1|8)-1
+console.log(-2|-8)-2
+console.log(2|8)10
 
 
 //not truthy -falsy falsy-truthy
@@ -1344,7 +1345,7 @@ const evenNumbers=[0,2,4,6,8]
 console.log(evenNumbers.shift())
 console.log(evenNumbers)
 
-//Incase of push we delete the last element from the array but when you use the shift operator which delete the element from the first number.In js shift will affect the js engine.In starting you delete a no then the js engine will put index for every element in the array.Index of the array will changed.IN push we just delete the last element here you can't change the index just delete the element or index from the last
+//Incase of pop we delete the last element from the array but when you use the shift operator which delete the element from the first number.In js shift will affect the js engine.In starting you delete a no then the js engine will put index for every element in the array.Index of the array will changed.IN push we just delete the last element here you can't change the index just delete the element or index from the last
 
 console.log(evenNumbers.unshift(0))//add the element in the starting.
 console.log(evenNumbers)
