@@ -121,3 +121,13 @@ addEventListener and attachEvent are used for different purposes
 ANSWER:
  To ensure the event listener is added correctly
 */
+
+//js map
+
+let arr=[1,2,3,4,5]
+
+const square=arr.map((n)=>{
+ return n*n
+})
+
+console.log(square)
