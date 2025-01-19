@@ -131,3 +131,10 @@ const square=arr.map((n)=>{
 })
 
 console.log(square)
+
+let arr2=[1,2,3,4,5,6,7]
+
+const divisibleByTwo=arr2.filter((n)=>{
+    return n%2==0
+})
+console.log(divisibleByTwo)
