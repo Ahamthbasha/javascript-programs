@@ -127,8 +127,38 @@ const form=document.querySelector("form")
 //     console.log("form submitted")
 // })
 
-form.addEventListener("click",(e)=>{
-    e.preventDefault()
-    console.log(e.target)
-    console.log(e.currentTarget)
-})
+// form.addEventListener("click",(e)=>{
+//     e.preventDefault()
+//     console.log(e.target)
+//     console.log(e.currentTarget)
+// })
+
+
+//questions and answer
+
+/*
+1.What is the primary purpose of form events in JavaScript?
+ANS:
+To create interactive forms
+
+2.What is the event object in JavaScript?
+ANS:
+An object that represents the event that occurred
+
+3.What is the change event in JavaScript?
+ANS:
+Triggered when the value of a form element changes
+
+4.What is the focus event in JavaScript?
+ANS:
+Triggered when a form element gains focus
+
+5.What is the input event in JavaScript?
+ANS:
+Triggered when a form element's value changes
+
+6.What is the difference between an event listener and an event handler in JavaScript?
+ANS:
+An event listener is a function that is called when an event occurs, while an event handler is a function that is called when an event is triggered
+*/
+

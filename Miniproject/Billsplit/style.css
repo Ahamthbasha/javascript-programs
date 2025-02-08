@@ -1,0 +1,28 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin:0;
+    font-family:sans-serif;
+}
+
+main{
+    max-width:400px;
+    margin:0 auto
+}
+
+.input-container input{
+    border:none;
+    outline:none;
+    appearance:none;
+    width:100%
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{
+    -webkit-apperance:none;
+    -moz-apperance:none;
+    appearance: none;
+    margin:0;
+}
